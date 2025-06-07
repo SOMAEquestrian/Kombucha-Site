@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maastricht Kombucha</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background: #ffe0b2;
+      padding: 2rem;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+    header p {
+      font-size: 1.1rem;
+    }
+    section {
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+    .product {
+      background: white;
+      border-radius: 10px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    .product h2 { margin-bottom: 0.5rem; }
+    .product p { margin-bottom: 0.3rem; }
+    .button {
+      background: #ff7043;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      margin-right: 10px;
+      margin-top: 0.5rem;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #f1f1f1;
+      margin-top: 2rem;
+    }
+    .instructions {
+      background: #fff3e0;
+      border-left: 4px solid #ffa726;
+      padding: 1rem;
+      margin-top: 2rem;
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Maastricht Kombucha</h1>
+    <p>Freshly brewed homemade kombucha – local, organic, and delicious</p>
+  </header>
+
+  <section>
+    <div class="product">
+      <h2>Standard Kombucha</h2>
+      <p>Choose your size:</p>
+      <p>500ml – €3,50</p>
+      <a href="https://buy.stripe.com/test_link500mlstandard" class="button" target="_blank">Buy 500ml</a>
+      <p>1L – €6,00</p>
+      <a href="https://buy.stripe.com/test_link1Lstandard" class="button" target="_blank">Buy 1L</a>
+    </div>
+
+    <div class="product">
+      <h2>Mixed Berries Kombucha</h2>
+      <p>Choose your size:</p>
+      <p>500ml – €4,00</p>
+      <a href="https://buy.stripe.com/test_link500mlberries" class="button" target="_blank">Buy 500ml</a>
+      <p>1L – €7,00</p>
+      <a href="https://buy.stripe.com/test_link1Lberries" class="button" target="_blank">Buy 1L</a>
+    </div>
+  </section>
+
+  <section>
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:you@example.com">you@example.com</a></p>
+    <p>Instagram: <a href="https://instagram.com/yourkombucha" target="_blank">@yourkombucha</a></p>
+  </section>
+
+  <section class="instructions">
+    <h2>🛠 What to Do Now (Deploy via GitHub + Netlify)</h2>
+    <ol>
+      <li>Create a GitHub account if you don’t have one at <a href="https://github.com" target="_blank">github.com</a>.</li>
+      <li>Create a new GitHub repository named something like <strong>kombucha-website</strong>.</li>
+      <li>Click "Add file" → "Upload files", and upload this HTML file.</li>
+      <li>Go to <a href="https://netlify.com" target="_blank">netlify.com</a> and sign up/log in.</li>
+      <li>Click <strong>“Add new site” → “Import an existing project”</strong>.</li>
+      <li>Connect your GitHub account to Netlify and choose the repository.</li>
+      <li>Netlify will automatically detect the settings. Click <strong>Deploy Site</strong>.</li>
+    </ol>
+    <p>That’s it! 🎉 Netlify will give you a live link to your kombucha website, e.g. <code>yourkombucha.netlify.app</code>.</p>
+    <p>Make changes? Just push to GitHub again — Netlify updates your site automatically.</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Maastricht Kombucha. All rights reserved.</p>
+  </footer>
+</body>
+</html>
