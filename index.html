@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SOMA Kombucha</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Rampart+One&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Rampart One', cursive;
+      background: linear-gradient(to bottom, #ffe6f0, #ffccde);
+      color: #4a004a;
+      line-height: 1.6;
+      background-image: url('https://www.transparenttextures.com/patterns/berries.png');
+    }
+    header {
+      background: #ff69b4;
+      padding: 2rem;
+      text-align: center;
+      color: white;
+      background-image: linear-gradient(135deg, #ff6f91 0%, #ff9671 100%);
+    }
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+    header p {
+      font-size: 1.2rem;
+      font-family: 'Montserrat', sans-serif;
+    }
+    header a {
+      display: block;
+      margin-top: 0.5rem;
+      font-family: 'Montserrat', sans-serif;
+      color: #fff;
+      text-decoration: underline;
+      font-size: 1rem;
+    }
+    section {
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+    .product {
+      background: white;
+      border-radius: 15px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 15px rgba(255, 105, 180, 0.2);
+      border: 2px dashed #ff69b4;
+      background-image: url('https://www.transparenttextures.com/patterns/symphony.png');
+      position: relative;
+    }
+    .product img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+    }
+    .product h2 {
+      margin-bottom: 0.5rem;
+      color: #880e4f;
+    }
+    .product p {
+      margin-bottom: 0.3rem;
+      font-family: 'Montserrat', sans-serif;
+    }
+    .button {
+      background: #d63384;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 0.5rem;
+      font-family: 'Montserrat', sans-serif;
+      transition: background 0.3s;
+    }
+    .button:hover {
+      background: #ad1457;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #ffd6e7;
+      margin-top: 2rem;
+      font-family: 'Montserrat', sans-serif;
+    }
+    h2, p, a {
+      font-family: 'Montserrat', sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>SOMA Kombucha</h1>
+    <p>Kombucha – the epitome of symbiosis of life</p>
+    <a href="#about">Learn more about our kombucha</a>
+  </header>
+
+  <section>
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1625586747643-2d78e8aab6a5?auto=format&fit=crop&w=800&q=80" alt="500ml SOMA Kombucha">
+      <h2>Mixed Berry Kombucha (500ml)</h2>
+      <p>€7.00 per bottle</p>
+      <p>Homebrewed kombucha made with fresh organic green tea and sugar, fermented by SCOBY. Infused with a mix of different berries for a delicious fruity twist.</p>
+      <a href="https://buy.stripe.com/test_500mlLinkHere" class="button" target="_blank">Buy 500ml</a>
+    </div>
+
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1583337130417-fdcc88ea9d45?auto=format&fit=crop&w=800&q=80" alt="1L SOMA Kombucha">
+      <h2>Mixed Berry Kombucha (1L)</h2>
+      <p>€12.00 per bottle</p>
+      <p>Homebrewed kombucha made with fresh organic green tea and sugar, fermented by SCOBY. Perfect for enjoying daily or using as a starter to grow your own SCOBY.</p>
+      <a href="https://buy.stripe.com/test_1LLinkHere" class="button" target="_blank">Buy 1L</a>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>About Our Kombucha</h2>
+    <p>SOMA Kombucha is brewed at home using high-quality organic green tea, natural cane sugar, and a living SCOBY (Symbiotic Culture Of Bacteria and Yeast). Our berry blend is infused with a medley of hand-selected berries for an energizing burst of flavor. Every bottle is raw, unpasteurized, and alive with probiotics.</p>
+  </section>
+
+  <section>
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:you@example.com">you@example.com</a></p>
+    <p>Instagram: <a href="https://instagram.com/yourkombucha" target="_blank">@yourkombucha</a></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 SOMA Kombucha. All rights reserved.</p>
+  </footer>
+</body>
+</html>
