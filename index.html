@@ -3,8 +3,38 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>SOMA Kombucha</title>
+  
+  <!-- SEO Title -->
+  <title>Organic Kombucha in Maastricht | SOMA Kombucha</title>
+  
+  <!-- SEO Meta Description -->
+  <meta name="description" content="SOMA Kombucha - Handmade organic kombucha brewed in Maastricht. Enjoy fresh, probiotic-rich kombucha made with care. Order your bottle today!" />
+  
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Rampart+One&family=Great+Vibes&display=swap" rel="stylesheet" />
+  
+  <!-- Structured Data for LocalBusiness (no street address) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "SOMA Kombucha",
+    "image": "https://i.imgur.com/jSSNozR.jpg",
+    "email": "mailto:somakombuchamaas@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Maastricht",
+      "addressCountry": "NL"
+    },
+    "url": "https://yourdomain.com",
+    "telephone": "+31-6-12345678",
+    "sameAs": [
+      "https://www.instagram.com/thereturntosource/"
+    ],
+    "description": "Handmade organic kombucha brewed locally in Maastricht."
+  }
+  </script>
+
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -29,9 +59,6 @@
       font-family: 'Great Vibes', cursive;
       font-size: 2.2rem;
       color: white;
-      background: none !important;
-      -webkit-background-clip: unset !important;
-      -webkit-text-fill-color: unset !important;
       text-shadow: 0 0 6px rgba(255, 255, 255, 0.8), 0 0 10px rgba(255, 255, 255, 0.6);
       margin-top: 0.5rem;
       letter-spacing: 1.5px;
@@ -119,44 +146,45 @@
 <body>
   <header>
     <h1>SOMA Kombucha</h1>
-    <p class="fancy-slogan">Return to Source</p>
+    <p class="fancy-slogan">Return to Source - Organic Kombucha in Maastricht</p>
   </header>
 
   <section>
-    <div class="product">
-      <img src="https://i.imgur.com/jSSNozR.jpg" alt="Mixed Berry Kombucha">
+    <article class="product" aria-label="Mixed Berry Kombucha product">
+      <img src="https://i.imgur.com/jSSNozR.jpg" alt="Bottle of Mixed Berry Kombucha" />
       <h2>Mixed Berry Kombucha</h2>
       <p>Homebrewed kombucha made with fresh organic green tea and sugar, fermented by SCOBY. Infused with a mix of different berries. Not recommended for use as a starter. Bottles can be returned for €2 back.</p>
-      <a href="checkout.html?product=500ml-mixed" class="button">Buy 500ml - €7.00</a>
-      <a href="checkout.html?product=1l-mixed" class="button">Buy 1L - €12.00</a>
-    </div>
+      <a href="checkout.html?product=500ml-mixed" class="button" aria-label="Buy 500ml Mixed Berry Kombucha for 7 euros">Buy 500ml - €7.00</a>
+      <a href="checkout.html?product=1l-mixed" class="button" aria-label="Buy 1L Mixed Berry Kombucha for 12 euros">Buy 1L - €12.00</a>
+    </article>
 
-    <div class="product">
-      <img src="https://i.imgur.com/vNiByO1.jpg" alt="Regular Kombucha">
+    <article class="product" aria-label="Regular Kombucha product">
+      <img src="https://i.imgur.com/vNiByO1.jpg" alt="Bottle of Regular Kombucha" />
       <h2>Regular Kombucha</h2>
       <p>Classic homebrewed kombucha made with fresh organic green tea and sugar, fermented by SCOBY. Suitable as a starter culture to grow your own SCOBY. Bottles can be returned for €2 back.</p>
-      <a href="checkout.html?product=500ml-regular" class="button">Buy 500ml - €7.00</a>
-      <a href="checkout.html?product=1l-regular" class="button">Buy 1L - €12.00</a>
-    </div>
+      <a href="checkout.html?product=500ml-regular" class="button" aria-label="Buy 500ml Regular Kombucha for 7 euros">Buy 500ml - €7.00</a>
+      <a href="checkout.html?product=1l-regular" class="button" aria-label="Buy 1L Regular Kombucha for 12 euros">Buy 1L - €12.00</a>
+    </article>
   </section>
 
-  <section id="about">
-    <h2>About Our Kombucha</h2>
+  <section id="about" aria-labelledby="about-heading">
+    <h2 id="about-heading">About Our Kombucha in Maastricht</h2>
     <p style="font-family: 'Rampart One', cursive; font-size: 1.3rem; margin-bottom: 1rem;">The epitome of symbiosis of life</p>
-    <img src="https://i.imgur.com/2ZghCIp.jpg" alt="SOMA Kombucha Brewing" class="about-img" />
+    <img src="https://i.imgur.com/2ZghCIp.jpg" alt="SOMA Kombucha Brewing Process" class="about-img" />
     <p>SOMA Kombucha is brewed at home in Maastricht using high-quality organic green tea, sugar, and a living SCOBY (Symbiotic Culture Of Bacteria and Yeast). Our berry blend is infused with a mix of different berries for an energizing burst of flavor. Every bottle is raw, unpasteurized, and alive with probiotics. Bottles can be returned for €2 refund. Currently only available in Maastricht!</p>
-    <p>Email: <a href="mailto:somakombuchamaas@gmail.com">somakombuchamaas@gmail.com</a></p>
+    <p>Contact us via email: <a href="mailto:somakombuchamaas@gmail.com">somakombuchamaas@gmail.com</a></p>
   </section>
 
-  <section>
+  <section aria-label="Contact Information">
     <h2>Contact</h2>
     <p>Email: <a href="mailto:somakombuchamaas@gmail.com">somakombuchamaas@gmail.com</a></p>
-    <p>Instagram: <a href="https://www.instagram.com/thereturntosource/" target="_blank">@thereturntosource</a></p>
+    <p>Instagram: <a href="https://www.instagram.com/thereturntosource/" target="_blank" rel="noopener noreferrer">@thereturntosource</a></p>
   </section>
 
   <footer>
-    <p>&copy; 2025 SOMA Kombucha All rights reserved.</p>
+    <p>&copy; 2025 SOMA Kombucha. All rights reserved.</p>
   </footer>
 </body>
 </html>
+
 
