@@ -92,7 +92,56 @@
     <input type="text" id="houseNumber" name="houseNumber" placeholder="e.g. 42" required />
 
     <label for="zip">ZIP Code</label>
-    <input type="text" id="zip" name="zip" placeholder="e.g. 6211 AB" p
+    <input type="text" id="zip" name="zip" placeholder="e.g. 6211 AB" pattern="[0-9]{4}\s?[A-Za-z]{2}" title="Format: 1234 AB" required />
 
+    <label for="city">City</label>
+    <select id="city" name="city" disabled>
+      <option selected>Maastricht</option>
+    </select>
 
+    <p class="delivery-info">Delivery will occur within one to two working days.</p>
 
+    <button type="submit" class="button">Proceed to Payment</button>
+  </form>
+
+  <script>
+    const productMap = {
+      "500ml-mixed": {
+        name: "500ml Mixed Berry",
+        url: "https://buy.stripe.com/eVqfZh4Hr2sYdn01L69oc01"
+      },
+      "1l-mixed": {
+        name: "1L Mixed Berry",
+        url: "https://buy.stripe.com/6oU9ATfm5c3ydn075q9oc02"
+      },
+      "500ml-regular": {
+        name: "500ml Regular",
+        url: "https://buy.stripe.com/28EcN5fm53x22Im4Xi9oc04"
+      },
+      "1l-regular": {
+        name: "1L Regular",
+        url: "https://buy.stripe.com/7sY00j3DnffK3Mq75q9oc03"
+      }
+    };
+
+    const params = new URLSearchParams(window.location.search);
+    const productKey = params.get("product");
+
+    const productDisplay = document.getElementById("product-display");
+    const form = document.getElementById("checkout-form");
+
+    if (productKey && productMap[productKey]) {
+      const product = productMap[productKey];
+      productDisplay.textContent = product.name;
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        window.location.href = product.url;
+      });
+    } else {
+      productDisplay.textContent = "Invalid product. Please go back and select again.";
+      form.style.display = "none";
+    }
+  </script>
+</body>
+</html>
