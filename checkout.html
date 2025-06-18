@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Checkout - SOMA Kombucha</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Rampart+One&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(to bottom, #ffe6f0, #ffccde);
+      color: #4a004a;
+      padding: 2rem;
+    }
+    .container {
+      max-width: 600px;
+      background: white;
+      padding: 2rem;
+      margin: auto;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(255, 105, 180, 0.2);
+      border: 2px dashed #ff69b4;
+    }
+    h2 {
+      font-family: 'Rampart One', cursive;
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    label {
+      display: block;
+      margin-top: 1rem;
+    }
+    input {
+      width: 100%;
+      padding: 0.7rem;
+      margin-top: 0.3rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+    button {
+      margin-top: 2rem;
+      background: #d63384;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      width: 100%;
+    }
+    button:hover {
+      background: #ad1457;
+    }
+    .note {
+      font-size: 0.9rem;
+      margin-top: 1rem;
+      color: #880e4f;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Delivery Details</h2>
+    <form id="checkoutForm">
+      <label for="address">Address (Maastricht only)</label>
+      <input type="text" id="address" name="address" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" name="phone" required>
+
+      <input type="hidden" id="product" name="product">
+
+      <button type="submit">Continue to Payment</button>
+      <p class="note">* Delivery only available in Maastricht.</p>
+    </form>
+  </div>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const product = urlParams.get('product');
+    document.getElementById('product').value = product;
+
+    document.getElementById('checkoutForm').addEventListener('submit', async function (e) {
+      e.preventDefault();
+
+      const form = this;
+      const formData = new FormData(form);
+      const address = formData.get("address").toLowerCase();
+
+      if (!address.includes("maastricht")) {
+        alert("We only deliver within Maastricht.");
+        return;
+      }
+
+      const response = await fetch("https://formspree.io/f/yourFormID", {
+        method: "POST",
+        headers: { 'Accept': 'application/json' },
+        body: formData
+      });
+
+      if (response.ok) {
+        const stripeLinks = {
+          "mixed-berry-500ml": "https://buy.stripe.com/eVqfZh4Hr2sYdn01L69oc01",
+          "mixed-berry-1l": "https://buy.stripe.com/6oU9ATfm5c3ydn075q9oc02",
+          "regular-500ml": "https://buy.stripe.com/28EcN5fm53x22Im4Xi9oc04",
+          "regular-1l": "https://buy.stripe.com/7sY00j3DnffK3Mq75q9oc03"
+        };
+        window.location.href = stripeLinks[product] || "/";
+      } else {
+        alert("There was a problem submitting your details. Please try again.");
+      }
+    });
+  </script>
+</body>
+</html>
