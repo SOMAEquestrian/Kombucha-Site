@@ -50,14 +50,8 @@
       color: #ad1457;
       font-weight: 600;
     }
-    .buttons {
-      margin-top: 1.5rem;
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
     .button {
-      flex: 1;
+      margin-top: 1.5rem;
       background: #d63384;
       color: white;
       border: none;
@@ -65,17 +59,27 @@
       font-size: 1rem;
       cursor: pointer;
       padding: 0.8rem;
+      width: 100%;
       text-align: center;
-      text-decoration: none;
+      font-family: 'Montserrat', sans-serif;
       transition: background 0.3s;
     }
     .button:hover {
       background: #ad1457;
     }
+    .product-title {
+      text-align: center;
+      font-weight: 700;
+      font-size: 1.4rem;
+      color: #880e4f;
+      margin-bottom: 0.5rem;
+    }
   </style>
 </head>
 <body>
   <h1>Checkout - SOMA Kombucha</h1>
+
+  <div id="product-display" class="product-title">Loading product...</div>
 
   <form id="checkout-form">
     <label for="name">Full Name</label>
@@ -88,28 +92,7 @@
     <input type="text" id="houseNumber" name="houseNumber" placeholder="e.g. 42" required />
 
     <label for="zip">ZIP Code</label>
-    <input type="text" id="zip" name="zip" placeholder="e.g. 6211 AB" pattern="[0-9]{4}\s?[A-Za-z]{2}" title="Format: 1234 AB" required />
+    <input type="text" id="zip" name="zip" placeholder="e.g. 6211 AB" p
 
-    <label for="city">City</label>
-    <select id="city" name="city" disabled>
-      <option selected>Maastricht</option>
-    </select>
-
-    <p class="delivery-info">Delivery will occur within one to two working days.</p>
-
-    <div class="buttons">
-      <a href="https://buy.stripe.com/eVqfZh4Hr2sYdn01L69oc01" class="button" target="_blank" rel="noopener">Buy 500ml Mixed Berry</a>
-      <a href="https://buy.stripe.com/6oU9ATfm5c3ydn075q9oc02" class="button" target="_blank" rel="noopener">Buy 1L Mixed Berry</a>
-      <a href="https://buy.stripe.com/28EcN5fm53x22Im4Xi9oc04" class="button" target="_blank" rel="noopener">Buy 500ml Regular</a>
-      <a href="https://buy.stripe.com/7sY00j3DnffK3Mq75q9oc03" class="button" target="_blank" rel="noopener">Buy 1L Regular</a>
-    </div>
-
-    <div class="buttons" style="margin-top:1rem;">
-      <a href="#" class="button" style="background:#ff69b4;" target="_blank" rel="noopener">Pre-Order Mixed Berry</a>
-      <a href="#" class="button" style="background:#ff69b4;" target="_blank" rel="noopener">Pre-Order Regular</a>
-    </div>
-  </form>
-</body>
-</html>
 
 
