@@ -1,210 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  
-  <!-- Google Site Verification -->
-  <meta name="google-site-verification" content="Yfeh6nx1R8t3Gw1-zd10eUYbxwviuFLS1QjxkflTpHo" />
-  
-  <!-- SEO Title -->
-  <title>Organic Kombucha in Maastricht | SOMA Kombucha</title>
-  
-  <!-- SEO Meta Description -->
-  <meta name="description" content="SOMA Kombucha - Handmade organic kombucha brewed in Maastricht. Enjoy fresh, probiotic-rich kombucha made with care. Order your bottle today!" />
-  
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Rampart+One&family=Great+Vibes&display=swap" rel="stylesheet" />
-  
-  <!-- Structured Data for LocalBusiness (only city, no street address) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "SOMA Kombucha",
-    "image": "https://i.imgur.com/jSSNozR.jpg",
-    "email": "somakombuchamaas@gmail.com",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Maastricht",
-      "addressCountry": "NL"
-    },
-    "url": "https://yourdomain.com",
-    "telephone": "+31-6-12345678",
-    "sameAs": [
-      "https://www.instagram.com/thereturntosource/"
-    ],
-    "description": "Handmade organic kombucha brewed locally in Maastricht."
-  }
-  </script>
 
+  <!-- Basic SEO -->
+  <title>SOMA Kombucha — Natural Soda & Probiotic Drink in Maastricht</title>
+  <meta name="description" content="SOMA Kombucha — Neon-pink, science-backed natural soda alternative brewed in Maastricht. Sparkling, probiotic, organic. Try Berry Fizz & Classic Spark." />
+  <meta name="keywords" content="Kombucha in Maastricht, natural soda in Maastricht, natural probiotic drink in Maastricht, SOMA Kombucha, Berry Fizz, Classic Spark" />
+  <meta name="author" content="SOMA Kombucha" />
+  <link rel="canonical" href="https://yourdomain.com/" />
+
+  <!-- Open Graph (for Facebook/LinkedIn) -->
+  <meta property="og:locale" content="en_GB" />
+  <meta property="og:site_name" content="SOMA Kombucha" />
+  <meta property="og:title" content="SOMA Kombucha — Natural Soda & Probiotic Drink in Maastricht" />
+  <meta property="og:description" content="Neon-pink, science-backed natural soda alternative brewed in Maastricht. Sparkling, probiotic, organic." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://yourdomain.com/" />
+  <meta property="og:image" content="https://i.imgur.com/jSSNozR.jpg" />
+  <meta property="og:image:alt" content="Berry Fizz bottle — natural probiotic soda brewed in Maastricht" />
+
+  <!-- Twitter card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@thereturntosource" />
+  <meta name="twitter:title" content="SOMA Kombucha — Natural Soda in Maastricht" />
+  <meta name="twitter:description" content="Sparkling, probiotic kombucha brewed locally in Maastricht. The healthy soda alternative." />
+  <meta name="twitter:image" content="https://i.imgur.com/jSSNozR.jpg" />
+  <meta name="twitter:image:alt" content="Berry Fizz bottle — natural probiotic soda brewed in Maastricht" />
+
+  <!-- Google verification -->
+  <meta name="google-site-verification" content="Yfeh6nx1R8t3Gw1-zd10eUYbxwviuFLS1QjxkflTpHo" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: 'Rampart One', cursive;
-      background: linear-gradient(to bottom, #ffe6f0, #ffccde);
-      color: #4a004a;
-      line-height: 1.6;
-      background-image: url('https://www.transparenttextures.com/patterns/berries.png');
+    :root{
+      --pink-1:#ff0099; --pink-2:#ff66cc; --deep:#2a002a;
+      --muted:#6b496b; --card-bg:#fff;
     }
-    header {
-      background: #ff69b4;
-      padding: 2rem;
-      text-align: center;
-      color: white;
-      background-image: linear-gradient(135deg, #ff6f91 0%, #ff9671 100%);
+    *{box-sizing:border-box}
+    body{
+      font-family:'Montserrat',sans-serif; margin:0; line-height:1.6; color:var(--deep);
+      background:linear-gradient(180deg,#fff0fb 0%,#fff6fd 100%);
     }
-    header h1 {
-      font-size: 3rem;
-      margin-bottom: 0.2rem;
-    }
-    .fancy-slogan {
-      font-family: 'Great Vibes', cursive;
-      font-size: 2.2rem;
-      color: white;
-      text-shadow: 0 0 6px rgba(255, 255, 255, 0.8), 0 0 10px rgba(255, 255, 255, 0.6);
-      margin-top: 0.5rem;
-      letter-spacing: 1.5px;
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeSlideIn 2s ease-out forwards;
-    }
-    .sub-slogan {
-      font-family: 'Rampart One', cursive;
-      font-size: 1.5rem;
-      color: white;
-      margin-top: 0.2rem;
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeSlideIn 2.5s ease-out forwards;
-      font-style: italic;
-      letter-spacing: 1.2px;
-    }
-    @keyframes fadeSlideIn {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-    section {
-      padding: 2rem;
-      max-width: 900px;
-      margin: auto;
-    }
-    .product {
-      background: white;
-      border-radius: 15px;
-      padding: 1.5rem;
-      margin-bottom: 2rem;
-      box-shadow: 0 4px 15px rgba(255, 105, 180, 0.2);
-      border: 2px dashed #ff69b4;
-      background-image: url('https://www.transparenttextures.com/patterns/symphony.png');
-      text-align: center;
-    }
-    .product img {
-      width: 300px;
-      max-width: 100%;
-      height: auto;
-      border-radius: 10px;
-      margin: 1rem auto;
-      display: block;
-    }
-    .product h2 {
-      margin-bottom: 0.5rem;
-      color: #880e4f;
-      font-family: 'Montserrat', sans-serif;
-    }
-    .product p {
-      margin-bottom: 0.3rem;
-      font-family: 'Montserrat', sans-serif;
-    }
-    .button {
-      background: #d63384;
-      color: white;
-      padding: 0.8rem 1.5rem;
-      border: none;
-      border-radius: 8px;
-      font-size: 1rem;
-      cursor: pointer;
-      text-decoration: none;
-      display: inline-block;
-      margin-top: 0.5rem;
-      font-family: 'Montserrat', sans-serif;
-      transition: background 0.3s;
-      margin-right: 1rem;
-    }
-    .button:hover {
-      background: #ad1457;
-    }
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background: #ffd6e7;
-      margin-top: 2rem;
-      font-family: 'Montserrat', sans-serif;
-    }
-    h2, p, a {
-      font-family: 'Montserrat', sans-serif;
-    }
-    .about-img {
-      width: 100%;
-      max-width: 500px;
-      border-radius: 10px;
-      margin-top: 1rem;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-    }
+    header{background:linear-gradient(90deg,var(--pink-1),var(--pink-2));color:#fff;text-align:center;padding:1rem;position:sticky;top:0}
+    header h1{font-family:'Roboto Mono',monospace;font-size:1.8rem;margin:0}
+    header p{margin:0.3rem 0 0}
+    nav a{color:#fff;text-decoration:none;margin:0 0.6rem;font-weight:600}
+    nav a:hover{text-decoration:underline}
+    main{max-width:1000px;margin:1.4rem auto;padding:0 1rem}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.2rem}
+    .card{background:#fff;border-radius:12px;padding:1.1rem;box-shadow:0 6px 20px rgba(255,0,150,0.1)}
+    h2{font-family:'Roboto Mono',monospace;color:var(--deep)}
+    .btn{display:inline-block;background:linear-gradient(90deg,var(--pink-1),var(--pink-2));color:#fff;padding:0.6rem 1rem;border-radius:8px;text-decoration:none;font-weight:700;margin-top:0.6rem}
+    .btn:hover{opacity:0.9}
+    .product-img{width:100%;max-width:300px;display:block;margin:0.6rem auto;border-radius:10px}
+    footer{background:#fff0fb;padding:1rem;text-align:center;margin-top:2rem}
+    footer nav a{color:var(--muted);margin:0 0.5rem;text-decoration:none}
   </style>
 </head>
 <body>
-  <header>
-    <h1>SOMA Kombucha</h1>
-    <p class="fancy-slogan">Return to Source</p>
-    <p class="sub-slogan">Organic Kombucha in Maastricht</p>
-  </header>
 
-  <section>
-    <article class="product" aria-label="Mixed Berry Kombucha product">
-      <img src="https://i.imgur.com/jSSNozR.jpg" alt="Bottle of Mixed Berry Kombucha" />
-      <h2>Mixed Berry Kombucha</h2>
-      <p>Homebrewed kombucha made with fresh organic green tea and sugar, fermented by SCOBY. Infused with a mix of different berries. Not recommended for use as a starter. Bottles can be returned for €2 back.</p>
-      <a href="checkout.html?product=500ml-mixed" class="button" aria-label="Buy 500ml Mixed Berry Kombucha for 7 euros">Buy 500ml - €7.00</a>
-      <a href="checkout.html?product=1l-mixed" class="button" aria-label="Buy 1 liter Mixed Berry Kombucha for 12 euros">Buy 1L - €12.00</a>
+<header>
+  <h1>SOMA Kombucha</h1>
+  <p>Neon Pink • Science-backed • Natural Soda in Maastricht</p>
+  <nav>
+    <a href="/">Home</a>
+    <a href="#products">Products</a>
+    <a href="/about">The Science</a>
+    <a href="/blog">Blog</a>
+    <a href="#subscribe">Subscribe</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <section class="card">
+    <h2>The Healthy Fizz</h2>
+    <p>SOMA Kombucha is a <strong>natural probiotic soda in Maastricht</strong>. Fizz like soda, brewed by nature with organic tea and live cultures.</p>
+    <a class="btn" href="#products">Shop Now</a>
+    <a class="btn" href="/about">Read the Science</a>
+  </section>
+
+  <section id="products" class="grid">
+    <article class="card">
+      <img src="https://i.imgur.com/jSSNozR.jpg" alt="Berry Fizz — natural probiotic soda in Maastricht" title="Berry Fizz — natural soda alternative" class="product-img" loading="lazy">
+      <h2>Berry Fizz</h2>
+      <p>A sparkling berry-flavored probiotic drink. Soda sensation, probiotic science.</p>
+      <a class="btn" href="checkout.html?product=500ml-mixed">Buy 500ml – €7</a>
+      <a class="btn" href="checkout.html?product=1l-mixed">Buy 1L – €12</a>
     </article>
 
-    <article class="product" aria-label="Regular Kombucha product">
-      <img src="https://i.imgur.com/vNiByO1.jpg" alt="Bottle of Regular Kombucha" />
-      <h2>Regular Kombucha</h2>
-      <p>Classic homebrewed kombucha made with fresh organic green tea and sugar, fermented by SCOBY. Suitable as a starter culture to grow your own SCOBY. Bottles can be returned for €2 back.</p>
-      <a href="checkout.html?product=500ml-regular" class="button" aria-label="Buy 500ml Regular Kombucha for 7 euros">Buy 500ml - €7.00</a>
-      <a href="checkout.html?product=1l-regular" class="button" aria-label="Buy 1 liter Regular Kombucha for 12 euros">Buy 1L - €12.00</a>
+    <article class="card">
+      <img src="https://i.imgur.com/vNiByO1.jpg" alt="Classic Spark — sparkling kombucha soda" title="Classic Spark — healthy soda alternative" class="product-img" loading="lazy">
+      <h2>Classic Spark</h2>
+      <p>Crisp, tangy kombucha that doubles as a <strong>natural soda in Maastricht</strong>.</p>
+      <a class="btn" href="checkout.html?product=500ml-regular">Buy 500ml – €7</a>
+      <a class="btn" href="checkout.html?product=1l-regular">Buy 1L – €12</a>
     </article>
   </section>
 
-  <section id="about">
-    <h2>About Our Kombucha</h2>
-    <p style="font-family: 'Rampart One', cursive; font-size: 1.3rem; margin-bottom: 1rem;">
-      The epitome of symbiosis of life
-    </p>
-    <img src="https://i.imgur.com/2ZghCIp.jpg" alt="SOMA Kombucha Brewing" class="about-img" />
-    <p>
-      SOMA Kombucha is brewed at home in Maastricht using high-quality organic green tea, sugar, and a living SCOBY (Symbiotic Culture Of Bacteria and Yeast). Our berry blend is infused with a mix of different berries for an energizing burst of flavor. Every bottle is raw, unpasteurized, and alive with probiotics. Bottles can be returned for €2 refund. Currently only available in Maastricht!
-    </p>
-    <p>Email: <a href="mailto:somakombuchamaas@gmail.com">somakombuchamaas@gmail.com</a></p>
+  <section id="about" class="card">
+    <h2>The Science Behind Our Kombucha</h2>
+    <p>Learn about fermentation, probiotics, and why kombucha is the perfect healthy soda alternative.</p>
+    <a class="btn" href="/about">Read More</a>
+    <img src="https://i.imgur.com/2ZghCIp.jpg" alt="Kombucha brewing setup in Maastricht" title="Scientific brewing — SOMA Kombucha" class="product-img" loading="lazy">
   </section>
 
-  <section>
+  <section id="subscribe" class="card">
+    <h2>Subscribe to Our Newsletter</h2>
+    <p>Get new flavor drops, probiotic science updates, and exclusive offers.</p>
+    <form action="https://your-mail-service.com/subscribe" method="POST">
+      <input type="email" name="email" placeholder="Enter your email" required>
+      <button type="submit" class="btn">Subscribe</button>
+    </form>
+  </section>
+
+  <section id="contact" class="card">
     <h2>Contact</h2>
     <p>Email: <a href="mailto:somakombuchamaas@gmail.com">somakombuchamaas@gmail.com</a></p>
-    <p>Instagram: <a href="https://www.instagram.com/thereturntosource/" target="_blank" rel="noopener noreferrer">@thereturntosource</a></p>
+    <p>Instagram: <a href="https://www.instagram.com/thereturntosource/" target="_blank">@thereturntosource</a></p>
   </section>
+</main>
 
-  <footer>
-    <p>&copy; 2025 SOMA Kombucha All rights reserved.</p>
-  </footer>
+<footer>
+  <nav>
+    <a href="/privacy">Privacy Policy</a> |
+    <a href="/terms">Terms of Service</a> |
+    <a href="/returns">Returns & Refunds</a> |
+    <a href="/shipping">Shipping Info</a>
+  </nav>
+  <p>&copy; 2025 SOMA Kombucha. All rights reserved.</p>
+</footer>
+
 </body>
 </html>
+
 
 
 
