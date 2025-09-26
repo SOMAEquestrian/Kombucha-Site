@@ -1,72 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <!-- Basic SEO -->
-  <title>SOMA Kombucha — Natural Soda & Probiotic Drink in Maastricht</title>
-  <meta name="description" content="SOMA Kombucha — Neon-pink, science-backed natural soda alternative brewed in Maastricht. Sparkling, probiotic, organic. Try Berry Fizz & Classic Spark." />
-  <meta name="keywords" content="Kombucha in Maastricht, natural soda in Maastricht, natural probiotic drink in Maastricht, SOMA Kombucha, Berry Fizz, Classic Spark" />
-  <meta name="author" content="SOMA Kombucha" />
-  <link rel="canonical" href="https://yourdomain.com/" />
-
-  <!-- Open Graph (for Facebook/LinkedIn) -->
-  <meta property="og:locale" content="en_GB" />
-  <meta property="og:site_name" content="SOMA Kombucha" />
-  <meta property="og:title" content="SOMA Kombucha — Natural Soda & Probiotic Drink in Maastricht" />
-  <meta property="og:description" content="Neon-pink, science-backed natural soda alternative brewed in Maastricht. Sparkling, probiotic, organic." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://yourdomain.com/" />
-  <meta property="og:image" content="https://i.imgur.com/jSSNozR.jpg" />
-  <meta property="og:image:alt" content="Berry Fizz bottle — natural probiotic soda brewed in Maastricht" />
-
-  <!-- Twitter card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:site" content="@thereturntosource" />
-  <meta name="twitter:title" content="SOMA Kombucha — Natural Soda in Maastricht" />
-  <meta name="twitter:description" content="Sparkling, probiotic kombucha brewed locally in Maastricht. The healthy soda alternative." />
-  <meta name="twitter:image" content="https://i.imgur.com/jSSNozR.jpg" />
-  <meta name="twitter:image:alt" content="Berry Fizz bottle — natural probiotic soda brewed in Maastricht" />
-
-  <!-- Google verification -->
-  <meta name="google-site-verification" content="Yfeh6nx1R8t3Gw1-zd10eUYbxwviuFLS1QjxkflTpHo" />
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
-
-  <!-- Styles -->
-  <style>
-    :root{
-      --pink-1:#ff0099; --pink-2:#ff66cc; --deep:#2a002a;
-      --muted:#6b496b; --card-bg:#fff;
-    }
-    *{box-sizing:border-box}
-    body{
-      font-family:'Montserrat',sans-serif; margin:0; line-height:1.6; color:var(--deep);
-      background:linear-gradient(180deg,#fff0fb 0%,#fff6fd 100%);
-    }
-    header{background:linear-gradient(90deg,var(--pink-1),var(--pink-2));color:#fff;text-align:center;padding:1rem;position:sticky;top:0}
-    header h1{font-family:'Roboto Mono',monospace;font-size:1.8rem;margin:0}
-    header p{margin:0.3rem 0 0}
-    nav a{color:#fff;text-decoration:none;margin:0 0.6rem;font-weight:600}
-    nav a:hover{text-decoration:underline}
-    main{max-width:1000px;margin:1.4rem auto;padding:0 1rem}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.2rem}
-    .card{background:#fff;border-radius:12px;padding:1.1rem;box-shadow:0 6px 20px rgba(255,0,150,0.1)}
-    h2{font-family:'Roboto Mono',monospace;color:var(--deep)}
-    .btn{display:inline-block;background:linear-gradient(90deg,var(--pink-1),var(--pink-2));color:#fff;padding:0.6rem 1rem;border-radius:8px;text-decoration:none;font-weight:700;margin-top:0.6rem}
-    .btn:hover{opacity:0.9}
-    .product-img{width:100%;max-width:300px;display:block;margin:0.6rem auto;border-radius:10px}
-    footer{background:#fff0fb;padding:1rem;text-align:center;margin-top:2rem}
-    footer nav a{color:var(--muted);margin:0 0.5rem;text-decoration:none}
-  </style>
-</head>
-<body>
-
+<!-- Header -->
 <header>
-  <h1>SOMA Kombucha</h1>
-  <p>Neon Pink • Science-backed • Natural Soda in Maastricht</p>
+  <div class="brand" role="img" aria-hidden="false">
+    <h1 class="logo">SOMA Kombucha</h1>
+  </div>
+  <p class="lead">Neon Pink • Science-backed • Natural Soda in Maastricht</p>
   <nav>
     <a href="/">Home</a>
     <a href="#products">Products</a>
@@ -77,67 +14,17 @@
   </nav>
 </header>
 
-<main>
-  <section class="card">
-    <h2>The Healthy Fizz</h2>
-    <p>SOMA Kombucha is a <strong>natural probiotic soda in Maastricht</strong>. Fizz like soda, brewed by nature with organic tea and live cultures.</p>
-    <a class="btn" href="#products">Shop Now</a>
-    <a class="btn" href="/about">Read the Science</a>
-  </section>
+<!-- Hero / Healthy Fizz -->
+<section class="card hero" aria-labelledby="hero-title">
+  <h2 id="hero-title" class="kicker">The Healthy Fizz</h2>
+  <h2 class="hero-title">Fizz like soda — brewed by nature</h2>
+  <p class="hero-text">SOMA Kombucha is a naturally sparkling probiotic drink — soda sensation, brewed with organic tea, live cultures, and juicy flavor.</p>
+  <div class="hero-buttons">
+    <a class="btn" href="#products">Shop Drinks</a>
+    <a class="btn secondary" href="/about">Read the Science</a>
+  </div>
+</section>
 
-  <section id="products" class="grid">
-    <article class="card">
-      <img src="https://i.imgur.com/jSSNozR.jpg" alt="Berry Fizz — natural probiotic soda in Maastricht" title="Berry Fizz — natural soda alternative" class="product-img" loading="lazy">
-      <h2>Berry Fizz</h2>
-      <p>A sparkling berry-flavored probiotic drink. Soda sensation, probiotic science.</p>
-      <a class="btn" href="checkout.html?product=500ml-mixed">Buy 500ml – €7</a>
-      <a class="btn" href="checkout.html?product=1l-mixed">Buy 1L – €12</a>
-    </article>
-
-    <article class="card">
-      <img src="https://i.imgur.com/vNiByO1.jpg" alt="Classic Spark — sparkling kombucha soda" title="Classic Spark — healthy soda alternative" class="product-img" loading="lazy">
-      <h2>Classic Spark</h2>
-      <p>Crisp, tangy kombucha that doubles as a <strong>natural soda in Maastricht</strong>.</p>
-      <a class="btn" href="checkout.html?product=500ml-regular">Buy 500ml – €7</a>
-      <a class="btn" href="checkout.html?product=1l-regular">Buy 1L – €12</a>
-    </article>
-  </section>
-
-  <section id="about" class="card">
-    <h2>The Science Behind Our Kombucha</h2>
-    <p>Learn about fermentation, probiotics, and why kombucha is the perfect healthy soda alternative.</p>
-    <a class="btn" href="/about">Read More</a>
-    <img src="https://i.imgur.com/2ZghCIp.jpg" alt="Kombucha brewing setup in Maastricht" title="Scientific brewing — SOMA Kombucha" class="product-img" loading="lazy">
-  </section>
-
-  <section id="subscribe" class="card">
-    <h2>Subscribe to Our Newsletter</h2>
-    <p>Get new flavor drops, probiotic science updates, and exclusive offers.</p>
-    <form action="https://your-mail-service.com/subscribe" method="POST">
-      <input type="email" name="email" placeholder="Enter your email" required>
-      <button type="submit" class="btn">Subscribe</button>
-    </form>
-  </section>
-
-  <section id="contact" class="card">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:somakombuchamaas@gmail.com">somakombuchamaas@gmail.com</a></p>
-    <p>Instagram: <a href="https://www.instagram.com/thereturntosource/" target="_blank">@thereturntosource</a></p>
-  </section>
-</main>
-
-<footer>
-  <nav>
-    <a href="/privacy">Privacy Policy</a> |
-    <a href="/terms">Terms of Service</a> |
-    <a href="/returns">Returns & Refunds</a> |
-    <a href="/shipping">Shipping Info</a>
-  </nav>
-  <p>&copy; 2025 SOMA Kombucha. All rights reserved.</p>
-</footer>
-
-</body>
-</html>
 
 
 
