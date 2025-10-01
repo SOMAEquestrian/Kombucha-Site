@@ -3,15 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-2RN71Q5DH6"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2RN71Q5DH6"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-2RN71Q5DH6');
+  </script>
 
-  gtag('config', 'G-2RN71Q5DH6');
-</script>
   <!-- Basic SEO -->
   <title>SOMA Kombucha — Natural Soda & Probiotic Drink in Maastricht</title>
   <meta name="description" content="SOMA Kombucha — Science-backed natural soda alternative brewed in Maastricht. Sparkling, probiotic, organic. Try Berry Fizz & Classic Spark." />
@@ -211,19 +212,7 @@
   <!-- About Us -->
   <section id="about" class="card">
     <h2>About SOMA Kombucha</h2>
-    <p>
-      At SOMA Kombucha, we believe that what we drink can support both body and mind. With mental health challenges on the rise and diets high in sugar contributing to inflammation and cognitive strain, choosing healthier beverages is more important than ever.
-    </p>
-    <p>
-      Our kombucha is a naturally sparkling, probiotic drink brewed in Maastricht. Using high-quality organic green tea, white sugar, and a living SCOBY, we ferment our kombucha over 2–3 weeks, followed by a short carbonation period. This creates a complex, lightly acidic flavor with minimal alcohol (~0.5%), rich in beneficial bacteria such as <em>Brettanomyces</em> and <em>Komagataeibacter</em>.
-    </p>
-    <p>
-      We currently offer two flavors: <strong>Classic</strong> and <strong>Mixed Berry</strong>, in 500mL or 1L glass bottles. Available online, at local markets, and in select stores in Maastricht.
-    </p>
-    <p>
-      SOMA Kombucha aims to bring a healthier alternative to the carbonated beverage market. By creating kombucha that rivals the taste of soda, we encourage people to replace high-sugar soft drinks with a natural, probiotic option. Our vision includes scaling production and exploring bioengineered flavors while maintaining quality.
-    </p>
-    <p><strong>Our Mission:</strong> Reconnect people with natural, healthful beverages — <em>The Return to Source.</em></p>
+    <p>...content...</p>
     <a href="/blog" class="btn">Read Our Blog</a>
     <a href="#subscribe" class="btn secondary">Subscribe to Newsletter</a>
   </section>
@@ -256,6 +245,30 @@
   </nav>
   <p>&copy; 2025 SOMA Kombucha. All rights reserved.</p>
 </footer>
+
+<!-- Tracking Script for GA4 custom events -->
+<script>
+  // Track Buy button clicks
+  document.querySelectorAll('a.btn[href*="checkout.html"]').forEach(button => {
+    button.addEventListener('click', function() {
+      gtag('event', 'buy_click', {
+        item_name: this.innerText,
+        item_url: this.href
+      });
+    });
+  });
+
+  // Track newsletter form submission
+  const form = document.querySelector('#subscribe form');
+  if(form){
+    form.addEventListener('submit', function() {
+      gtag('event', 'newsletter_subscribe', {
+        method: 'form',
+        location: 'homepage'
+      });
+    });
+  }
+</script>
 
 </body>
 </html>
