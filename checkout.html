@@ -4,6 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>SOMA Kombucha Checkout</title>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2RN71Q5DH6"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-2RN71Q5DH6');
+  </script>
+
   <style>
     body {
       font-family: 'Montserrat', sans-serif;
@@ -105,28 +115,37 @@
   </form>
 
   <script>
+    // Product mapping
     const productMap = {
       "500ml-mixed": {
         name: "500ml Mixed Berry",
-        url: "https://buy.stripe.com/eVqfZh4Hr2sYdn01L69oc01"
+        url: "https://buy.stripe.com/eVqfZh4Hr2sYdn01L69oc01",
+        price: "7",
+        currency: "EUR"
       },
       "1l-mixed": {
         name: "1L Mixed Berry",
-        url: "https://buy.stripe.com/6oU9ATfm5c3ydn075q9oc02"
+        url: "https://buy.stripe.com/6oU9ATfm5c3ydn075q9oc02",
+        price: "12",
+        currency: "EUR"
       },
       "500ml-regular": {
         name: "500ml Regular",
-        url: "https://buy.stripe.com/28EcN5fm53x22Im4Xi9oc04"
+        url: "https://buy.stripe.com/28EcN5fm53x22Im4Xi9oc04",
+        price: "7",
+        currency: "EUR"
       },
       "1l-regular": {
         name: "1L Regular",
-        url: "https://buy.stripe.com/7sY00j3DnffK3Mq75q9oc03"
+        url: "https://buy.stripe.com/7sY00j3DnffK3Mq75q9oc03",
+        price: "12",
+        currency: "EUR"
       }
     };
 
+    // Get product from URL
     const params = new URLSearchParams(window.location.search);
     const productKey = params.get("product");
-
     const productDisplay = document.getElementById("product-display");
     const form = document.getElementById("checkout-form");
 
@@ -134,10 +153,27 @@
       const product = productMap[productKey];
       productDisplay.textContent = product.name;
 
+      // GA4 Buy event
+      gtag('event', 'buy_click', {
+        'product_name': product.name,
+        'price': product.price,
+        'currency': product.currency
+      });
+      console.log("GA4 buy_click event fired:", product.name, product.price, product.currency);
+
+      // Form submission
       form.addEventListener("submit", function (e) {
         e.preventDefault();
+        // Optional: fire GA4 purchase or proceed event
+        gtag('event', 'begin_checkout', {
+          'product_name': product.name,
+          'price': product.price,
+          'currency': product.currency
+        });
+        console.log("GA4 begin_checkout event fired:", product.name);
         window.location.href = product.url;
       });
+
     } else {
       productDisplay.textContent = "Invalid product. Please go back and select again.";
       form.style.display = "none";
@@ -145,3 +181,4 @@
   </script>
 </body>
 </html>
+
