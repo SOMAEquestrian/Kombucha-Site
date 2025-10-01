@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  
+
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-2RN71Q5DH6"></script>
   <script>
@@ -17,8 +17,16 @@
       // Track Buy button clicks
       document.querySelectorAll('.btn[href*="checkout.html"]').forEach(function(btn){
         btn.addEventListener('click', function() {
-          let productName = btn.closest('article').querySelector('h2').innerText;
-          let price = btn.innerText.match(/€\d+/) ? btn.innerText.match(/€\d+/)[0] : '';
+          let article = btn.closest('article');
+          if (!article) return;  // safety check
+
+          let h2 = article.querySelector('h2');
+          let productName = h2 ? h2.innerText : 'Unknown Product';
+          let priceMatch = btn.innerText.match(/€\d+/);
+          let price = priceMatch ? priceMatch[0] : '';
+
+          console.log('Buy clicked:', productName, price); // debug log
+
           gtag('event', 'buy_click', {
             'product_name': productName,
             'price': price
@@ -30,6 +38,7 @@
       const newsletterForm = document.querySelector('#subscribe form');
       if(newsletterForm){
         newsletterForm.addEventListener('submit', function() {
+          console.log('Newsletter subscribed'); // debug log
           gtag('event', 'newsletter_subscribe');
         });
       }
