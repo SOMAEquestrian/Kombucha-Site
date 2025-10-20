@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>About — SOMA Kombucha | The Science of Natural Soda</title>
-  <meta name="description" content="Discover the science behind SOMA Kombucha — a probiotic, natural soda alternative brewed in Maastricht with live cultures and organic tea." />
+  <title>About Us — SOMA Kombucha | The Soda That Loves Your Gut</title>
+  <meta name="description" content="Learn the story of SOMA Kombucha — founded in 2025 in Maastricht. Discover how simplicity, health, and science unite in the soda that loves your gut." />
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-2RN71Q5DH6"></script>
@@ -15,96 +15,144 @@
     gtag('config', 'G-2RN71Q5DH6');
   </script>
 
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Shrikhand&family=Canva+Sans&family=Hangyaboly&family=Handelson+Three&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="style.css" />
+  <!-- Styles -->
   <style>
-    body{
-      font-family:'Hangyaboly','Handelson Three',sans-serif;
-      background:linear-gradient(180deg,#fff0fb 0%,#fff6fd 100%);
-      color:#2a002a;
-      margin:0;
+    :root {
+      --primary-pink: #d2148e;
+      --deep: #2a002a;
+      --muted: #6b496b;
+      --card-bg: #fff;
     }
-    header, footer {
-      text-align:center;
-      background:#d2148e;
-      color:#fff;
-      padding:1rem;
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Hangyaboly','Handelson Three', sans-serif;
+      background: linear-gradient(180deg, #fff0fb 0%, #fff6fd 100%);
+      color: var(--deep);
+      line-height: 1.7;
+      margin: 0;
     }
-    header a, footer a {
-      color:#fff;
-      text-decoration:none;
-      margin:0 .5rem;
+
+    header {
+      background: var(--primary-pink);
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
+
+    .logo {
+      font-family: 'Canva Sans','Shrikhand', cursive;
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 0.6rem;
+      font-weight: 600;
+    }
+
+    nav a:hover { text-decoration: underline; }
+
     main {
-      max-width:900px;
-      margin:2rem auto;
-      padding:0 1rem;
-      background:#fff;
-      border-radius:12px;
-      box-shadow:0 10px 30px rgba(210,20,142,0.12);
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 1.5rem;
+      background: var(--card-bg);
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(210, 20, 142, 0.12);
     }
+
     h1, h2 {
-      font-family:'Canva Sans','Shrikhand',cursive;
-      color:#d2148e;
+      font-family: 'Canva Sans','Shrikhand', cursive;
+      color: var(--primary-pink);
+      text-align: center;
+      margin-bottom: 1rem;
     }
-    section {
-      padding:1.5rem 0;
+
+    p {
+      margin-bottom: 1rem;
+      text-align: justify;
+      font-size: 1.05rem;
     }
+
+    footer {
+      background: #fff0fb;
+      padding: 1rem;
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    footer nav a {
+      color: var(--muted);
+      margin: 0 0.5rem;
+      text-decoration: none;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--primary-pink);
+      color: #fff;
+      padding: 0.6rem 1rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      margin: 0.5rem;
+      transition: opacity 0.3s;
+    }
+
+    .btn:hover { opacity: 0.9; }
   </style>
 </head>
 <body>
 
 <header>
-  <h1>SOMA Kombucha</h1>
+  <div class="brand">
+    <h1 class="logo">SOMA Kombucha</h1>
+  </div>
   <nav>
-    <a href="/">Home</a>
-    <a href="/about">The Science</a>
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
     <a href="/blog">Blog</a>
-    <a href="#contact">Contact</a>
+    <a href="index.html#subscribe">Subscribe</a>
+    <a href="index.html#contact">Contact</a>
   </nav>
 </header>
 
 <main>
-  <section>
-    <h2>The Science of SOMA</h2>
-    <p>
-      SOMA Kombucha is where biology meets flavor. Our probiotic drink is crafted using a symbiotic culture of bacteria and yeast (SCOBY) that ferments organic green tea and sugar into a tangy, sparkling beverage.
-    </p>
-  </section>
+  <h1>About Us</h1>
 
-  <section>
-    <h2>Fermentation & Microbes</h2>
-    <p>
-      During fermentation, yeast transforms sugar into ethanol and CO₂, while acetic acid bacteria convert ethanol into organic acids such as acetic and gluconic acid. These natural processes result in a low-sugar, low-alcohol (~0.5%) drink rich in beneficial microbes like
-      <em>Brettanomyces</em> and <em>Komagataeibacter</em>.
-    </p>
-  </section>
+  <p>SOMA Kombucha was established in 2025 at the heart of Maastricht. This is the soda that loves your gut. Made with three ingredients, our focus is on health, simplicity, and authenticity. Every sip is a joyous experience full of soul and rich history taken from our ancestors.</p>
 
-  <section>
-    <h2>Why Kombucha Supports Gut Health</h2>
-    <p>
-      A balanced gut microbiome contributes to immune regulation, mood, and metabolism. The live cultures and organic acids in kombucha promote healthy gut flora and can help reduce sugar cravings by balancing blood glucose response.
-    </p>
-  </section>
+  <p>Fermentation is an ancient process, and Kombucha was known as the Elixir of Life, supporting our health by detoxifying the body. The return to source aims to commemorate this experience and bring it to the masses. At SOMA Kombucha, we believe in a better future starting from each individual — and what other way to a better future than through better health: the fundamental backbone of each individual and thus society.</p>
 
-  <section>
-    <h2>Our Brewing Philosophy</h2>
-    <p>
-      We prioritize slow fermentation, natural carbonation, and sustainable sourcing. Each batch is brewed in Maastricht using purified water, organic tea, and fruit infusions — no artificial additives, ever.
-    </p>
-  </section>
+  <p>SOMA Kombucha’s logo has a unique backstory. The bike represents the start of the journey, during which I decided to take a trip to IKEA to buy the first several batches of glass bottles after registering the company. The journey took roughly 24 km and 2 hours. The bike used to transport the first batch of bottles has since been used in several promotion gigs.</p>
 
-  <section>
-    <h2>Our Vision</h2>
-    <p>
-      We aim to redefine soda culture by merging scientific integrity with natural ingredients — inspiring people to “return to source” through mindful, probiotic refreshment.
-    </p>
-  </section>
+  <p>Our company is dedicated to simplicity while also bettering itself. We do this by standardizing our fermentation process and participating in ongoing scientific research. This is elegance, class, and boldness at its finest, with everyone taken into account. Our research focuses on the gut-brain axis — essentially the way fermentation can potentially aid in helping the mental health of individuals.</p>
+
+  <p>Check out our blog for our latest research. Join us in the return to the source!</p>
+
+  <div style="text-align:center; margin-top:2rem;">
+    <a href="/blog" class="btn">Visit Our Blog</a>
+    <a href="index.html" class="btn">Back to Home</a>
+  </div>
 </main>
 
-<footer id="contact">
-  <p>Contact us: <a href="mailto:somakombuchamaas@gmail.com">somakombuchamaas@gmail.com</a></p>
+<footer>
+  <nav>
+    <a href="/privacy">Privacy Policy</a> |
+    <a href="/terms">Terms of Service</a> |
+    <a href="/returns">Returns & Refunds</a> |
+    <a href="/shipping">Shipping Info</a>
+  </nav>
   <p>&copy; 2025 SOMA Kombucha. All rights reserved.</p>
 </footer>
 
