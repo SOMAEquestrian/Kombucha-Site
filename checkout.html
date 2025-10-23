@@ -15,75 +15,17 @@
   </script>
 
   <style>
-    body {
-      font-family: 'Montserrat', sans-serif;
-      background: #ffe6f0;
-      color: #4a004a;
-      padding: 2rem;
-      max-width: 600px;
-      margin: auto;
-    }
-    h1 {
-      text-align: center;
-      margin-bottom: 1rem;
-      font-family: 'Rampart One', cursive;
-      color: #d63384;
-    }
-    form {
-      background: white;
-      padding: 1.5rem;
-      border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(255, 105, 180, 0.3);
-    }
-    label {
-      display: block;
-      margin-top: 1rem;
-      font-weight: 600;
-      color: #880e4f;
-    }
-    input, select {
-      width: 100%;
-      padding: 0.6rem;
-      margin-top: 0.3rem;
-      border-radius: 6px;
-      border: 1px solid #ccc;
-      font-size: 1rem;
-      font-family: inherit;
-    }
-    select[disabled] {
-      background-color: #f8f8f8;
-      color: #888;
-    }
-    .delivery-info {
-      margin-top: 1rem;
-      font-style: italic;
-      color: #ad1457;
-      font-weight: 600;
-    }
-    .button {
-      margin-top: 1.5rem;
-      background: #d63384;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      font-size: 1rem;
-      cursor: pointer;
-      padding: 0.8rem;
-      width: 100%;
-      text-align: center;
-      font-family: 'Montserrat', sans-serif;
-      transition: background 0.3s;
-    }
-    .button:hover {
-      background: #ad1457;
-    }
-    .product-title {
-      text-align: center;
-      font-weight: 700;
-      font-size: 1.4rem;
-      color: #880e4f;
-      margin-bottom: 0.5rem;
-    }
+    body { font-family: 'Montserrat', sans-serif; background: #ffe6f0; color: #4a004a; padding: 2rem; max-width: 600px; margin: auto; }
+    h1 { text-align: center; margin-bottom: 1rem; font-family: 'Rampart One', cursive; color: #d63384; }
+    form { background: white; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(255, 105, 180, 0.3); }
+    label { display: block; margin-top: 1rem; font-weight: 600; color: #880e4f; }
+    input, select { width: 100%; padding: 0.6rem; margin-top: 0.3rem; border-radius: 6px; border: 1px solid #ccc; font-size: 1rem; font-family: inherit; }
+    select[disabled] { background-color: #f8f8f8; color: #888; }
+    .delivery-info { margin-top: 1rem; font-style: italic; color: #ad1457; font-weight: 600; }
+    .button { margin-top: 1.5rem; background: #d63384; color: white; border: none; border-radius: 8px; font-size: 1rem; cursor: pointer; padding: 0.8rem; width: 100%; text-align: center; font-family: 'Montserrat', sans-serif; transition: background 0.3s; }
+    .button:hover { background: #ad1457; }
+    .product-title { text-align: center; font-weight: 700; font-size: 1.4rem; color: #880e4f; margin-bottom: 0.5rem; }
+    .small { font-size: 0.9rem; color: #6b0b3a; margin-top: 0.5rem; }
   </style>
 </head>
 <body>
@@ -91,9 +33,16 @@
 
   <div id="product-display" class="product-title">Loading product...</div>
 
-  <form id="checkout-form">
+  <!-- Netlify form attributes and honeypot -->
+  <form id="checkout-form" name="checkout" netlify netlify-honeypot="bot-field">
+    <input type="hidden" name="form-name" value="checkout" />
+    <input type="hidden" name="product" id="product-hidden" />
+
     <label for="name">Full Name</label>
     <input type="text" id="name" name="name" required />
+
+    <label for="email">Email Address</label>
+    <input type="email" id="email" name="email" placeholder="you@example.com" required />
 
     <label for="street">Street Address</label>
     <input type="text" id="street" name="street" placeholder="e.g. Sint Pieterstraat" required />
@@ -102,7 +51,7 @@
     <input type="text" id="houseNumber" name="houseNumber" placeholder="e.g. 42" required />
 
     <label for="zip">ZIP Code</label>
-    <input type="text" id="zip" name="zip" placeholder="e.g. 6211 AB" pattern="[0-9]{4}\s?[A-Za-z]{2}" title="Format: 1234 AB" required />
+    <input type="text" id="zip" name="zip" placeholder="e.g. 6211 AB" pattern="[0-9]{4}\\s?[A-Za-z]{2}" title="Format: 1234 AB" required />
 
     <label for="city">City</label>
     <select id="city" name="city" disabled>
@@ -112,6 +61,7 @@
     <p class="delivery-info">Delivery will occur within one to two working days.</p>
 
     <button type="submit" class="button">Proceed to Payment</button>
+    <p id="status" class="small"></p>
   </form>
 
   <script>
@@ -128,26 +78,62 @@
     const product = productMap[productKey];
 
     const productDisplay = document.getElementById("product-display");
+    const productHidden = document.getElementById("product-hidden");
     const form = document.getElementById("checkout-form");
+    const statusP = document.getElementById("status");
 
     if (!product) {
       productDisplay.textContent = "Invalid product. Please go back and select again.";
       form.style.display = "none";
     } else {
       productDisplay.textContent = product.name;
+      productHidden.value = product.name;
 
-      form.addEventListener("submit", function (e) {
+      form.addEventListener("submit", async function (e) {
         e.preventDefault();
+        statusP.textContent = "Sending confirmation email...";
+
+        const data = {
+          name: document.getElementById("name").value.trim(),
+          email: document.getElementById("email").value.trim(),
+          street: document.getElementById("street").value.trim(),
+          houseNumber: document.getElementById("houseNumber").value.trim(),
+          zip: document.getElementById("zip").value.trim(),
+          city: document.getElementById("city").value,
+          product: product.name
+        };
+
+        try {
+          // Call Netlify function to send emails
+          const res = await fetch("/.netlify/functions/send-email", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(data)
+          });
+
+          if (!res.ok) {
+            const err = await res.json();
+            console.error("Error response from function:", err);
+            statusP.textContent = "Couldn't send confirmation email — continuing to payment.";
+          } else {
+            statusP.textContent = "Confirmation email sent. Redirecting to payment...";
+          }
+        } catch (err) {
+          console.error("Fetch error:", err);
+          statusP.textContent = "Network error sending email — continuing to payment.";
+        }
 
         // GA4 begin_checkout event
         gtag('event', 'begin_checkout', {
           currency: product.currency || "EUR",
-          value: parseFloat(product.name.match(/\d+/)) || 0,
+          value: parseFloat(product.name.match(/\\d+/)) || 0,
           items: [{ item_name: product.name }]
         });
 
-        // Redirect to Stripe
-        window.location.href = product.url;
+        // Short delay so user can read status (optional)
+        setTimeout(() => {
+          window.location.href = product.url;
+        }, 700);
       });
     }
   </script>
