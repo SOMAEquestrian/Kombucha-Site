@@ -62,4 +62,191 @@ document.addEventListener("DOMContentLoaded", function() {
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@thereturntosource" />
-<meta name="twitter:title" content="SOMA Komb
+<meta name="twitter:title" content="SOMA Kombucha — Natural Soda in Maastricht" />
+<meta name="twitter:description" content="Sparkling, probiotic kombucha brewed locally in Maastricht. The healthy soda alternative." />
+<meta name="twitter:image" content="https://i.imgur.com/jSSNozR.jpg" />
+<meta name="twitter:image:alt" content="Berry Fizz bottle — natural probiotic soda brewed in Maastricht" />
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Shrikhand&family=Canva+Sans&family=Hangyaboly&family=Handelson+Three&display=swap" rel="stylesheet" />
+
+<!-- Styles -->
+<style>
+:root{
+  --primary-pink:#d2148e;
+  --deep:#2a002a;
+  --muted:#6b496b;
+  --card-bg:#fff;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:'Hangyaboly','Handelson Three',sans-serif;
+  background:linear-gradient(180deg,#fff0fb 0%,#fff6fd 100%);
+  color:var(--deep);
+  line-height:1.6;
+}
+header{
+  background:var(--primary-pink);
+  color:#fff;
+  text-align:center;
+  padding:1rem;
+  position:sticky;
+  top:0;
+  z-index:100;
+}
+.logo{
+  font-family:'Canva Sans','Shrikhand',cursive;
+  font-size:2.2rem;
+  font-weight:700;
+  margin-bottom:0.3rem;
+}
+header p{
+  margin-bottom:0.5rem;
+  font-style:italic;
+}
+nav a{
+  color:#fff;
+  text-decoration:none;
+  margin:0 0.6rem;
+  font-weight:600;
+}
+nav a:hover{text-decoration:underline}
+main{
+  max-width:1000px;
+  margin:1.5rem auto;
+  padding:0 1rem;
+}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:1.2rem;
+}
+.card{
+  background:var(--card-bg);
+  border-radius:12px;
+  padding:1.5rem;
+  box-shadow:0 10px 30px rgba(210,20,142,0.12);
+  text-align:center;
+}
+h2{
+  font-family:'Canva Sans','Shrikhand',cursive;
+  color:var(--primary-pink);
+  margin-bottom:0.5rem;
+}
+.btn{
+  display:inline-block;
+  background:var(--primary-pink);
+  color:#fff;
+  padding:0.6rem 1rem;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:700;
+  margin:0.5rem;
+  transition:opacity 0.3s;
+}
+.btn:hover{opacity:0.9}
+.btn.secondary{
+  background:none;
+  border:2px solid var(--primary-pink);
+  color:var(--primary-pink);
+}
+.product-img{
+  width:100%;
+  max-width:300px;
+  display:block;
+  margin:0.6rem auto;
+  border-radius:10px;
+}
+.hero{
+  text-align:center;
+  padding:2rem 1rem;
+  margin:2rem auto;
+  max-width:800px;
+  border-radius:15px;
+  background:linear-gradient(to bottom right, rgba(210,20,142,0.05), rgba(27,77,62,0.05));
+}
+footer{
+  background:#fff0fb;
+  padding:1rem;
+  text-align:center;
+  margin-top:2rem;
+}
+footer nav a{
+  color:var(--muted);
+  margin:0 0.5rem;
+  text-decoration:none;
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <h1 class="logo">SOMA Kombucha</h1>
+  </div>
+  <p>Science-backed • Natural Soda in Maastricht</p>
+  <nav>
+    <a href="/">Home</a>
+    <a href="#products">Products</a>
+    <a href="about.html">About Us</a>
+    <a href="/blog">Blog</a>
+    <a href="#subscribe">Subscribe</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+<main>
+<!-- Hero / Healthy Fizz -->
+<section class="card hero">
+  <h2>The Healthy Fizz</h2>
+  <p>SOMA Kombucha is a naturally sparkling probiotic drink — soda sensation, brewed with organic tea, live cultures, and juicy flavor.</p>
+  <a class="btn" href="#products">Shop Drinks</a>
+  <a class="btn secondary" href="about.html">Read the Science</a>
+</section>
+<!-- Products -->
+<section id="products" class="grid">
+  <article class="card" aria-label="Berry Fizz kombucha product">
+    <img src="https://i.imgur.com/jSSNozR.jpg" alt="Berry Fizz — natural probiotic soda in Maastricht" class="product-img" loading="lazy">
+    <h2>Berry Fizz</h2>
+    <p>Sparkling berry-flavored kombucha, rich in probiotics and flavor.</p>
+    <a class="btn" href="checkout.html?product=500ml-mixed">Buy 500ml – €7</a>
+    <a class="btn" href="checkout.html?product=1l-mixed">Buy 1L – €12</a>
+  </article>
+  <article class="card" aria-label="Classic Spark kombucha product">
+    <img src="https://i.imgur.com/vNiByO1.jpg" alt="Classic Spark — sparkling kombucha soda" class="product-img" loading="lazy">
+    <h2>Classic Spark</h2>
+    <p>Crisp, tangy kombucha — a healthy soda alternative.</p>
+    <a class="btn" href="checkout.html?product=500ml-regular">Buy 500ml – €7</a>
+    <a class="btn" href="checkout.html?product=1l-regular">Buy 1L – €12</a>
+  </article>
+</section>
+<!-- About Us -->
+<section id="about" class="card">
+  <h2>About SOMA Kombucha</h2>
+  <p>
+    SOMA Kombucha is brewed in Maastricht with a mission to reconnect people to natural, healthful beverages — “The Return to Source.” Learn how we combine ancient fermentation with modern science to create a delicious, probiotic soda alternative.
+  </p>
+  <a href="about.html" class="btn">Learn More About the Science</a>
+</section>
+<!-- Newsletter -->
+<section id="subscribe" class="card">
+  <h2>Subscribe to Our Newsletter</h2>
+  <p>Get flavor drops, probiotic updates, and exclusive offers.</p>
+  <form action="https://your-mail-service.com/subscribe" method="POST">
+    <input type="email" name="email" placeholder="Enter your email" required>
+    <button type="submit" class="btn">Subscribe</button>
+  </form>
+</section>
+<!-- Contact -->
+<section id="contact" class="card">
+  <h2>Contact</h2>
+  <p>Email: <a href="mailto:somakombuchamaas@gmail.com">somakombuchamaas@gmail.com</a></p>
+  <p>Instagram: <a href="https://www.instagram.com/thereturntosource/" target="_blank">@thereturntosource</a></p>
+</section>
+</main>
+<footer>
+  <nav>
+    <a href="/privacy">Privacy Policy</a> | <a href="/terms">Terms of Service</a> | <a href="/returns">Returns & Refunds</a> | <a href="/shipping">Shipping Info</a>
+  </nav>
+  <p>&copy; 2025 SOMA Kombucha. All rights reserved.</p>
+</footer>
+</body>
+</html>
