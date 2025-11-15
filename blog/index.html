@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SOMA Kombucha Blog</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Shrikhand&family=Canva+Sans&family=Hangyaboly&family=Handelson+Three&display=swap" rel="stylesheet">
+
+<!-- Styles -->
+<style>
+:root {
+  --primary-pink:#d2148e;
+  --deep:#2a002a;
+  --muted:#6b496b;
+  --card-bg:#fff;
+}
+* { box-sizing:border-box; margin:0; padding:0; }
+body {
+  font-family:'Hangyaboly','Handelson Three',sans-serif;
+  background:linear-gradient(180deg,#fff0fb 0%,#fff6fd 100%);
+  color:var(--deep);
+  line-height:1.6;
+}
+header, footer {
+  background:var(--primary-pink);
+  color:#fff;
+  text-align:center;
+  padding:1rem;
+}
+header nav a, footer nav a {
+  color:#fff;
+  text-decoration:none;
+  margin:0 0.5rem;
+  font-weight:600;
+}
+header nav a:hover, footer nav a:hover { text-decoration:underline; }
+main {
+  max-width:1000px;
+  margin:2rem auto;
+  padding:0 1rem;
+}
+h1, h2 {
+  font-family:'Canva Sans','Shrikhand',cursive;
+  color:var(--primary-pink);
+}
+.grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:1rem;
+}
+.card {
+  background:var(--card-bg);
+  border-radius:12px;
+  padding:1rem;
+  box-shadow:0 10px 20px rgba(210,20,142,0.1);
+}
+.card img {
+  width:100%;
+  border-radius:10px;
+  margin-bottom:0.5rem;
+}
+.card h2 {
+  margin-bottom:0.5rem;
+}
+.card p {
+  margin-bottom:0.5rem;
+}
+footer {
+  font-size:0.9rem;
+  margin-top:2rem;
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>SOMA Kombucha Blog</h1>
+  <nav>
+    <a href="/">Home</a>
+    <a href="/blog">Blog</a>
+    <a href="about.html">About</a>
+  </nav>
+</header>
+
+<main>
+  <section class="grid">
+    <!-- Blog Post 1 -->
+    <article class="card">
+      <img src="https://i.imgur.com/jSSNozR.jpg" alt="Berry Fizz Kombucha">
+      <h2>Berry Fizz Flavor Spotlight</h2>
+      <p>Discover the probiotic benefits and juicy taste of Berry Fizz!</p>
+      <small>Published: Nov 15, 2025</small>
+    </article>
+
+    <!-- Blog Post 2 -->
+    <article class="card">
+      <img src="https://i.imgur.com/vNiByO1.jpg" alt="Classic Spark Kombucha">
+      <h2>Classic Spark: A Refreshing Soda Alternative</h2>
+      <p>Learn why Classic Spark is the perfect healthy soda alternative for daily refreshment.</p>
+      <small>Published: Nov 10, 2025</small>
+    </article>
+
+    <!-- Blog Post 3 -->
+    <article class="card">
+      <img src="https://i.imgur.com/jSSNozR.jpg" alt="Fermentation Science">
+      <h2>The Science Behind SOMA Kombucha</h2>
+      <p>We dive into the fermentation process that gives SOMA Kombucha its probiotic powers.</p>
+      <small>Published: Nov 5, 2025</small>
+    </article>
+  </section>
+</main>
+
+<footer>
+  <nav>
+    <a href="/">Home</a> | 
+    <a href="/blog">Blog</a> | 
+    <a href="about.html">About</a>
+  </nav>
+  <p>&copy; 2025 SOMA Kombucha. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
