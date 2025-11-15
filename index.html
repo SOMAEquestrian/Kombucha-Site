@@ -2,59 +2,152 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>SOMA Kombucha Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2RN71Q5DH6"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-2RN71Q5DH6');
+
+    // GA4 Custom Tracking for Buy Buttons and Newsletter
+    document.addEventListener("DOMContentLoaded", function() {
+      // Track Buy button clicks
+      document.querySelectorAll('.btn[href*="checkout.html"]').forEach(function(btn){
+        btn.addEventListener('click', function() {
+          let article = btn.closest('article');
+          if (!article) return;  // safety check
+
+          let h2 = article.querySelector('h2');
+          let productName = h20 ? h2.innerText : 'Unknown Product';
+          let priceMatch = btn.innerText.match(/€\d+/);
+          let price = priceMatch ? priceMatch[0] : '';
+
+          console.log('Buy clicked:', productName, price); // debug log
+
+          gtag('event', 'buy_click', {
+            'product_name': productName,
+            'price': price
+          });
+        });
+      });
+
+      // Track Newsletter submissions
+      const newsletterForm = document.querySelector('#subscribe form');
+      if(newsletterForm){
+        newsletterForm.addEventListener('submit', function() {
+          console.log('Newsletter subscribed'); // debug log
+          gtag('event', 'newsletter_subscribe');
+        });
+      }
+    });
+  </script>
+
+  <!-- Basic SEO -->
+  <title>SOMA Kombucha — Natural Soda & Probiotic Drink in Maastricht</title>
+  <meta name="description" content="SOMA Kombucha — Science-backed natural soda alternative brewed in Maastricht. Sparkling, probiotic, organic. Try Berry Fizz & Classic Spark." />
+  <meta name="keywords" content="Kombucha in Maastricht, natural soda in Maastricht, natural probiotic drink in Maastricht, SOMA Kombucha, Berry Fizz, Classic Spark" />
+  <meta name="author" content="SOMA Kombucha" />
+  <link rel="canonical" href="https://yourdomain.com/" />
+
+  <!-- Open Graph -->
+  <meta property="og:locale" content="en_GB" />
+  <meta property="og:site_name" content="SOMA Kombucha" />
+  <meta property="og:title" content="SOMA Kombucha — Natural Soda & Probiotic Drink in Maastricht" />
+  <meta property="og:description" content="Science-backed natural soda alternative brewed in Maastricht. Sparkling, probiotic, organic." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://yourdomain.com/" />
+  <meta property="og:image" content="https://i.imgur.com/jSSNozR.jpg" />
+  <meta property="og:image:alt" content="Berry Fizz bottle — natural probiotic soda brewed in Maastricht" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@thereturntosource" />
+  <meta name="twitter:title" content="SOMA Kombucha — Natural Soda in Maastricht" />
+  <meta name="twitter:description" content="Sparkling, probiotic kombucha brewed locally in Maastricht. The healthy soda alternative." />
+  <meta name="twitter:image" content="https://i.imgur.com/jSSNozR.jpg" />
+  <meta name="twitter:image:alt" content="Berry Fizz bottle — natural probiotic soda brewed in Maastricht" />
+
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Shrikhand&family=Canva+Sans&family=Hangyaboly&family=Handelson+Three&display=swap" rel="stylesheet" />
 
+  <!-- Styles -->
   <style>
-    body {
+    :root{
+      --primary-pink:#d2148e;
+      --deep:#2a002a;
+      --muted:#6b496b;
+      --card-bg:#fff;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
       font-family:'Hangyaboly','Handelson Three',sans-serif;
       background:linear-gradient(180deg,#fff0fb 0%,#fff6fd 100%);
-      color:#2a002a;
+      color:var(--deep);
       line-height:1.6;
-      padding:1rem;
-      max-width:800px;
-      margin:auto;
     }
-    h1 {
-      font-family:'Canva Sans','Shrikhand',cursive;
-      color:#d2148e;
+
+    header{
+      background:var(--primary-pink);
+      color:#fff;
       text-align:center;
-      margin-bottom:1rem;
-    }
-    .post-card {
-      background:#fff;
       padding:1rem;
-      border-radius:12px;
-      margin:1rem 0;
-      box-shadow:0 6px 20px rgba(210,20,142,0.12);
+      position:sticky;
+      top:0;
+      z-index:100;
     }
-    a {
-      color:#d2148e;
+
+    .logo{
+      font-family:'Canva Sans','Shrikhand',cursive;
+      font-size:2.2rem;
+      font-weight:700;
+      margin-bottom:0.3rem;
+    }
+
+    header p{
+      margin-bottom:0.5rem;
+      font-style:italic;
+    }
+
+    nav a{
+      color:#fff;
       text-decoration:none;
-      font-weight:bold;
+      margin:0 0.6rem;
+      font-weight:600;
     }
-    a:hover { text-decoration:underline; }
-  </style>
-</head>
-<body>
+    nav a:hover{text-decoration:underline}
 
-<h1>SOMA Blog</h1>
+    main{
+      max-width:1000px;
+      margin:1.5rem auto;
+      padding:0 1rem;
+    }
 
-<div class="post-card">
-  <h2><a href="first-post.html">Why Kombucha Is the Healthiest Soda Alternative</a></h2>
-  <p>A quick breakdown of probiotics, organic acids, and why your gut loves kombucha.</p>
-</div>
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:1.2rem;
+    }
 
-<div class="post-card">
-  <h2><a href="benefits.html">5 Science-Backed Benefits of Drinking Kombucha</a></h2>
-  <p>Evidence-based insights into how fermentation supports digestion, immunity, and more.</p>
-</div>
+    .card{
+      background:var(--card-bg);
+      border-radius:12px;
+      padding:1.5rem;
+      box-shadow:0 10px 30px rgba(210,20,142,0.12);
+      text-align:center;
+    }
 
-<a href="/">← Back to Home</a>
+    h2{
+      font-family:'Canva Sans','Shrikhand',cursive;
+      color:var(--primary-pink);
+      margin-bottom:0.5rem;
+    }
 
-</body>
-</html>
+    .btn{
+      display:inline-block;
+
 
 
