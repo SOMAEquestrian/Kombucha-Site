@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>SOMA Kombucha Blog</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Blog</title>
 
 <!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Shrikhand&family=Canva+Sans&family=Hangyaboly&family=Handelson+Three&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Shrikhand&family=Canva+Sans&family=Hangyaboly&family=Handelson+Three&display=swap" rel="stylesheet" />
 
-<!-- Styles -->
+<!-- Styles (match homepage) -->
 <style>
 :root {
   --primary-pink:#d2148e;
@@ -16,107 +16,134 @@
   --muted:#6b496b;
   --card-bg:#fff;
 }
+
 * { box-sizing:border-box; margin:0; padding:0; }
+
 body {
   font-family:'Hangyaboly','Handelson Three',sans-serif;
   background:linear-gradient(180deg,#fff0fb 0%,#fff6fd 100%);
   color:var(--deep);
   line-height:1.6;
 }
-header, footer {
+
+header {
   background:var(--primary-pink);
   color:#fff;
   text-align:center;
   padding:1rem;
+  position:sticky;
+  top:0;
+  z-index:100;
 }
-header nav a, footer nav a {
+
+header .logo {
+  font-family:'Canva Sans','Shrikhand',cursive;
+  font-size:2.2rem;
+  font-weight:700;
+  margin-bottom:0.3rem;
+}
+
+header p {
+  margin-bottom:0.5rem;
+  font-style:italic;
+}
+
+nav a {
   color:#fff;
   text-decoration:none;
-  margin:0 0.5rem;
+  margin:0 0.6rem;
   font-weight:600;
 }
-header nav a:hover, footer nav a:hover { text-decoration:underline; }
+
+nav a:hover { text-decoration:underline; }
+
 main {
   max-width:1000px;
   margin:2rem auto;
   padding:0 1rem;
 }
-h1, h2 {
+
+h1 {
   font-family:'Canva Sans','Shrikhand',cursive;
   color:var(--primary-pink);
+  text-align:center;
+  margin-bottom:1.5rem;
 }
-.grid {
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:1rem;
-}
+
 .card {
   background:var(--card-bg);
   border-radius:12px;
-  padding:1rem;
-  box-shadow:0 10px 20px rgba(210,20,142,0.1);
+  padding:1.5rem;
+  box-shadow:0 10px 30px rgba(210,20,142,0.12);
+  margin-bottom:1.2rem;
+  text-align:center;
 }
-.card img {
-  width:100%;
-  border-radius:10px;
-  margin-bottom:0.5rem;
+
+.btn {
+  display:inline-block;
+  background:var(--primary-pink);
+  color:#fff;
+  padding:0.6rem 1rem;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:700;
+  margin:0.5rem;
+  transition:opacity 0.3s;
 }
-.card h2 {
-  margin-bottom:0.5rem;
+
+.btn:hover { opacity:0.9; }
+
+.btn.secondary {
+  background:none;
+  border:2px solid var(--primary-pink);
+  color:var(--primary-pink);
 }
-.card p {
-  margin-bottom:0.5rem;
-}
+
 footer {
-  font-size:0.9rem;
+  background:#fff0fb;
+  padding:1rem;
+  text-align:center;
   margin-top:2rem;
+}
+
+footer nav a {
+  color:var(--muted);
+  margin:0 0.5rem;
+  text-decoration:none;
 }
 </style>
 </head>
+
 <body>
 
 <header>
-  <h1>SOMA Kombucha Blog</h1>
+  <div class="brand">
+    <h1 class="logo">SOMA Kombucha</h1>
+  </div>
+  <p>Science-backed • Natural Soda in Maastricht</p>
   <nav>
     <a href="/">Home</a>
     <a href="/blog">Blog</a>
-    <a href="about.html">About</a>
+    <a href="about.html">About Us</a>
+    <a href="#subscribe">Subscribe</a>
+    <a href="#contact">Contact</a>
   </nav>
 </header>
 
 <main>
-  <section class="grid">
-    <!-- Blog Post 1 -->
-    <article class="card">
-      <img src="https://i.imgur.com/jSSNozR.jpg" alt="Berry Fizz Kombucha">
-      <h2>Berry Fizz Flavor Spotlight</h2>
-      <p>Discover the probiotic benefits and juicy taste of Berry Fizz!</p>
-      <small>Published: Nov 15, 2025</small>
-    </article>
-
-    <!-- Blog Post 2 -->
-    <article class="card">
-      <img src="https://i.imgur.com/vNiByO1.jpg" alt="Classic Spark Kombucha">
-      <h2>Classic Spark: A Refreshing Soda Alternative</h2>
-      <p>Learn why Classic Spark is the perfect healthy soda alternative for daily refreshment.</p>
-      <small>Published: Nov 10, 2025</small>
-    </article>
-
-    <!-- Blog Post 3 -->
-    <article class="card">
-      <img src="https://i.imgur.com/jSSNozR.jpg" alt="Fermentation Science">
-      <h2>The Science Behind SOMA Kombucha</h2>
-      <p>We dive into the fermentation process that gives SOMA Kombucha its probiotic powers.</p>
-      <small>Published: Nov 5, 2025</small>
-    </article>
+  <h1>Blog</h1>
+  <!-- Empty container for posts, paste your blog posts here -->
+  <section id="posts">
+    <!-- Blog posts will go here -->
   </section>
 </main>
 
 <footer>
   <nav>
-    <a href="/">Home</a> | 
-    <a href="/blog">Blog</a> | 
-    <a href="about.html">About</a>
+    <a href="/privacy">Privacy Policy</a> |
+    <a href="/terms">Terms of Service</a> |
+    <a href="/returns">Returns & Refunds</a> |
+    <a href="/shipping">Shipping Info</a>
   </nav>
   <p>&copy; 2025 SOMA Kombucha. All rights reserved.</p>
 </footer>
