@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2RN71Q5DH6"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-2RN71Q5DH6');
+
+// GA4 Custom Tracking for Buy Buttons
+document.addEventListener("DOMContentLoaded", function() {
+  document.querySelectorAll('.btn[href*="checkout.html"]').forEach(function(btn){
+    btn.addEventListener('click', function() {
+      let article = btn.closest('article');
+      if (!article) return;
+      let h2 = article.querySelector('h2');
+      let productName = h2 ? h2.innerText : 'Onbekend Product';
+      let priceMatch = btn.innerText.match(/€\d+/);
+      let price = priceMatch ? priceMatch[0] : '';
+      console.log('Buy clicked:', productName, price);
+      gtag('event', 'buy_click', {
+        'product_name': productName,
+        'price': price
+      });
+    });
+  });
+});
+</script>
+
+<title>SOMA Kombucha — Natuurlijke Frisdrank & Probiotische Drank in Maastricht</title>
+<meta name="description" content="SOMA Kombucha — Wetenschappelijk ondersteunde natuurlijke frisdrank, gebrouwen in Maastricht. Sprankelend, probiotisch, biologisch. Probeer Berry Fizz & Classic Spark." />
+<meta name="keywords" content="Kombucha in Maastricht, natuurlijke frisdrank in Maastricht, probiotische drank in Maastricht, SOMA Kombucha, Berry Fizz, Classic Spark" />
+<meta name="author" content="SOMA Kombucha" />
+<link rel="canonical" href="https://returntosource.netlify.app/index-nl.html" />
+
+<link href="https://fonts.googleapis.com/css2?family=Shrikhand&family=Canva+Sans&family=Hangyaboly&family=Handelson+Three&display=swap" rel="stylesheet" />
+
+<style>
+:root{
+  --primary-pink:#d2148e;
+  --deep:#2a002a;
+  --muted:#6b496b;
+  --card-bg:#fff;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:'Hangyaboly','Handelson Three',sans-serif;
+  background:linear-gradient(180deg,#fff0fb 0%,#fff6fd 100%);
+  color:var(--deep);
+  line-height:1.6;
+}
+header{
+  background:var(--primary-pink);
+  color:#fff;
+  text-align:center;
+  padding:1rem;
+  position:sticky;
+  top:0;
+  z-index:100;
+}
+.logo{
+  font-family:'Canva Sans','Shrikhand',cursive;
+  font-size:2.2rem;
+  font-weight:700;
+  margin-bottom:0.3rem;
+}
+header p{
+  margin-bottom:0.5rem;
+  font-style:italic;
+}
+nav a{
+  color:#fff;
+  text-decoration:none;
+  margin:0 0.6rem;
+  font-weight:600;
+}
+nav a:hover{text-decoration:underline}
+main{
+  max-width:1000px;
+  margin:1.5rem auto;
+  padding:0 1rem;
+}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:1.2rem;
+}
+.card{
+  background:var(--card-bg);
+  border-radius:12px;
+  padding:1.5rem;
+  box-shadow:0 10px 30px rgba(210,20,142,0.12);
+  text-align:center;
+}
+h2{
+  font-family:'Canva Sans','Shrikhand',cursive;
+  color:var(--primary-pink);
+  margin-bottom:0.5rem;
+}
+.btn{
+  display:inline-block;
+  background:var(--primary-pink);
+  color:#fff;
+  padding:0.6rem 1rem;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:700;
+  margin:0.5rem;
+  transition:opacity 0.3s;
+}
+.btn:hover{opacity:0.9}
+.btn.secondary{
+  background:none;
+  border:2px solid var(--primary-pink);
+  color:var(--primary-pink);
+}
+.product-img{
+  width:100%;
+  max-width:300px;
+  display:block;
+  margin:0.6rem auto;
+  border-radius:10px;
+}
+.hero{
+  text-align:center;
+  padding:2rem 1rem;
+  margin:2rem auto;
+  max-width:800px;
+  border-radius:15px;
+  background:linear-gradient(to bottom right, rgba(210,20,142,0.05), rgba(27,77,62,0.05));
+}
+footer{
+  background:#fff0fb;
+  padding:1rem;
+  text-align:center;
+  margin-top:2rem;
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <h1 class="logo">SOMA Kombucha</h1>
+  </div>
+  <p>Wetenschappelijk ondersteund • Natuurlijke Frisdrank in Maastricht</p>
+  <nav>
+    <a href="index.html">Engels</a> | <a href="index-nl.html">Nederlands</a>
+    <a href="#products">Producten</a>
+    <a href="about-nl.html">Over Ons</a>
+    <a href="/blog">Blog</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+<main>
+<section class="card hero">
+  <h2>De Gezonde Fizz</h2>
+  <p>SOMA Kombucha is een natuurlijk sprankelende probiotische drank — een frisdranksensatie, gebrouwen met biologische thee, levende culturen en sappige smaken.</p>
+  <a class="btn" href="#products">Bekijk Dranken</a>
+  <a class="btn secondary" href="about-nl.html">Lees over de wetenschap</a>
+</section>
+<section id="products" class="grid">
+  <article class="card" aria-label="Berry Fizz kombucha product">
+    <img src="https://i.imgur.com/jSSNozR.jpg" alt="Berry Fizz — natuurlijke probiotische frisdrank in Maastricht" class="product-img" loading="lazy">
+    <h2>Berry Fizz</h2>
+    <p>Sprankelende bessen-kombucha, rijk aan probiotica en smaak.</p>
+    <a class="btn" href="checkout-nl.html?product=500ml-mixed">Koop 500ml – €7</a>
+    <a class="btn" href="checkout-nl.html?product=1l-mixed">Koop 1L – €12</a>
+  </article>
+  <article class="card" aria-label="Classic Spark kombucha product">
+    <img src="https://i.imgur.com/vNiByO1.jpg" alt="Classic Spark — sprankelende kombucha frisdrank" class="product-img" loading="lazy">
+    <h2>Classic Spark</h2>
+    <p>Frisse, pittige kombucha — een gezonde frisdrank alternatief.</p>
+    <a class="btn" href="checkout-nl.html?product=500ml-regular">Koop 500ml – €7</a>
+    <a class="btn" href="checkout-nl.html?product=1l-regular">Koop 1L – €12</a>
+  </article>
+</section>
+<section id="about" class="card">
+  <h2>Over SOMA Kombucha</h2>
+  <p>
+    SOMA Kombucha wordt gebrouwen in Maastricht met als missie mensen te verbinden met natuurlijke, gezonde dranken — “De Terugkeer naar de Bron.” Ontdek hoe we oude fermentatietechnieken combineren met moderne wetenschap om een heerlijke, probiotische frisdrank te maken.
+  </p>
+  <a href="about-nl.html" class="btn">Lees meer over de wetenschap</a>
+</section>
+<section id="contact" class="card">
+  <h2>Contact</h2>
+  <p>Email: <a href="mailto:somakombuchamaas@gmail.com">somakombuchamaas@gmail.com</a></p>
+</section>
+</main>
+<footer>
+  <p>&copy; 2025 SOMA Kombucha. Alle rechten voorbehouden.</p>
+</footer>
+</body>
+</html>
