@@ -3,80 +3,94 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Blog</title>
 
-<title>SOMA Kombucha — Natural Soda & Probiotic Drink in Maastricht</title>
-<meta name="description" content="SOMA Kombucha — Science-backed natural soda alternative brewed in Maastricht." />
-
+<!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Shrikhand&family=Canva+Sans&family=Hangyaboly&family=Handelson+Three&display=swap" rel="stylesheet" />
 
 <style>
-:root{
+:root {
   --primary-pink:#d2148e;
   --deep:#2a002a;
   --muted:#6b496b;
   --card-bg:#fff;
 }
-*{box-sizing:border-box;margin:0;padding:0}
-body{
+
+* { box-sizing:border-box; margin:0; padding:0; }
+
+body {
   font-family:'Hangyaboly','Handelson Three',sans-serif;
   background:linear-gradient(180deg,#fff0fb 0%,#fff6fd 100%);
   color:var(--deep);
+  line-height:1.8;
 }
-header{
+
+header {
   background:var(--primary-pink);
   color:#fff;
   text-align:center;
   padding:1rem;
+  position:sticky;
+  top:0;
+  z-index:100;
 }
-.logo{
+
+header .logo {
   font-family:'Canva Sans','Shrikhand',cursive;
   font-size:2.2rem;
+  font-weight:700;
+  margin-bottom:0.3rem;
+  color:#fff; /* White text */
 }
-nav a{
+
+header p {
+  margin-bottom:0.5rem;
+  font-style:italic;
+  color:#fff; /* White text */
+}
+
+nav a {
   color:#fff;
   text-decoration:none;
   margin:0 0.6rem;
   font-weight:600;
 }
-main{
-  max-width:1000px;
-  margin:1.5rem auto;
+
+nav a:hover { text-decoration:underline; }
+
+main {
+  max-width:800px;
+  margin:2rem auto;
   padding:0 1rem;
 }
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:1.2rem;
-}
-.card{
-  background:#fff;
-  border-radius:12px;
-  padding:1.5rem;
-  box-shadow:0 10px 30px rgba(210,20,142,0.12);
-  text-align:center;
-}
-h2{
+
+h1, h2 {
+  font-family:'Canva Sans','Shrikhand',cursive;
   color:var(--primary-pink);
+  margin-bottom:1rem;
 }
-.btn{
-  display:inline-block;
-  background:var(--primary-pink);
-  color:#fff;
-  padding:0.6rem 1rem;
-  border-radius:8px;
-  text-decoration:none;
-  font-weight:700;
-  margin:0.5rem;
-}
-.product-img{
-  width:100%;
-  max-width:300px;
-  margin:0.6rem auto;
-  border-radius:10px;
-}
-footer{
+
+h1 {
+  font-size:2.2rem;
+  color:#fff; /* White title in header */
   text-align:center;
+}
+
+p {
+  margin-bottom:1rem;
+}
+
+footer {
+  background:#fff0fb;
   padding:1rem;
+  text-align:center;
+  margin-top:2rem;
+}
+
+footer nav a {
+  color:var(--muted);
+  margin:0 0.5rem;
+  text-decoration:none;
 }
 </style>
 </head>
@@ -84,51 +98,34 @@ footer{
 <body>
 
 <header>
-  <h1 class="logo">SOMA Kombucha</h1>
-  <p>Science-backed • Natural Soda in Maastricht</p>
+  <div class="brand">
+    <h1 class="logo">SOMA Kombucha Blog</h1>
+  </div>
   <nav>
     <a href="/">Home</a>
     <a href="#products">Products</a>
-    <a href="about.html">About</a>
+    <a href="about.html">About Us</a>
+    <a href="/blog">Blog</a>
+    <a href="#subscribe">Subscribe</a>
     <a href="#contact">Contact</a>
   </nav>
 </header>
 
 <main>
-
-<section class="card">
-  <h2>The Healthy Fizz</h2>
-  <p>Natural sparkling kombucha brewed with organic tea and live cultures.</p>
-  <a class="btn" href="#products">Shop Drinks</a>
-</section>
-
-<section id="products" class="grid">
   <article class="card">
-    <img src="https://i.imgur.com/jSSNozR.jpg" class="product-img" alt="Berry Fizz">
-    <h2>Berry Fizz</h2>
-    <p>Fruity, refreshing, probiotic-rich.</p>
-    <a class="btn" href="checkout.html?product=500ml-mixed">Buy 500ml – €7</a>
-    <a class="btn" href="checkout.html?product=1l-mixed">Buy 1L – €12</a>
+    <h2>Kombucha in Battling Depression</h2>
+    <p>When we think of depression, we think of a person sitting inside of their unkempt room, unable to move, lacking motivation. Many attribute this issue to that of the brain: the depression stemming from traumatic experiences or having no intrinsic factor driving purpose. The body however functions through several bidirectional systems, and the brain is no exception. This means that external influences such nutrients or experiences also have internal influences on the body’s function, and vice versa. One of these mechanisms is the gut-brain axis: or the bidirectional communication between our digestive tract and our brain. Meaning that what we consume also impacts the way we behave in the world.</p>
+
+    <p>Over the past decade, mental health disorders such as depression has experienced a steady global increase. According to the World Health Organization, 1 in every 8 people live with a mental health issue (<a href="https://www.who.int/news-room/fact-sheets/detail/mental-disorders" target="_blank">source</a>). When we look at the diet of people in developing societies, we can see a common theme of highly-caloric, refined diets being favored. Often these diets include beverages which are high in sugar content, or sodas. Although sugar-free sodas have taken up the market by storm, the alternative to sugar have been shown to have a detrimental impact on the brain’s blood-brain barrier. This begs the question of: how do we take back the mental health of people one step at a time?</p>
+
+    <p>Although mental health is a multifaceted issue, by changing the foundation of society, we can bring about positive outcomes. One way of doing this is replacing soda with a healthier alternative, namely Kombucha or nature’s soda. Kombucha is a fermented beverage made from a combination of tea, sugar, and a symbiotic combination of bacteria and yeast. After two weeks of fermentation the Symbiotic Culture of Bacteria and Yeast (or the SCOBY) produces a probiotic drink with a tangy, sweet, and sour taste. This renders the sugar content in the beverage low, as the SCOBY uses the sugar as energy, converting it into ferments which is beneficial for the gut microflora.</p>
+
+    <p>At SOMA Kombucha, we are on a mission to revolutionize the health industry by bringing fermentation to the mainstream market. We believe that by starting with society's foundation: health, we can see positive changes in the world.</p>
   </article>
-
-  <article class="card">
-    <img src="https://i.imgur.com/vNiByO1.jpg" class="product-img" alt="Classic Spark">
-    <h2>Classic Spark</h2>
-    <p>Clean, crisp, naturally fermented.</p>
-    <a class="btn" href="checkout.html?product=500ml-regular">Buy 500ml – €7</a>
-    <a class="btn" href="checkout.html?product=1l-regular">Buy 1L – €12</a>
-  </article>
-</section>
-
-<section id="contact" class="card">
-  <h2>Contact</h2>
-  <p>Email: <a href="mailto:somakombuchamaas@gmail.com">somakombuchamaas@gmail.com</a></p>
-</section>
-
 </main>
 
-<footer>
-  <p>SOMA Kombucha</p>
+  </nav>
+  <p>&copy; 2025 SOMA Kombucha. All rights reserved.</p>
 </footer>
 
 </body>
