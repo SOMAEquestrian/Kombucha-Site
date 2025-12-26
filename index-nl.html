@@ -14,7 +14,7 @@ gtag('config', 'G-2RN71Q5DH6');
 
 // GA4 Custom Tracking for Buy Buttons
 document.addEventListener("DOMContentLoaded", function() {
-  document.querySelectorAll('.btn[href*="checkout.html"]').forEach(function(btn){
+  document.querySelectorAll('.btn[href*="checkout-nl.html"]').forEach(function(btn){
     btn.addEventListener('click', function() {
       let article = btn.closest('article');
       if (!article) return;
@@ -80,6 +80,16 @@ nav a{
   font-weight:600;
 }
 nav a:hover{text-decoration:underline}
+.lang-switch{
+  background:#fff;
+  color:var(--primary-pink);
+  padding:0.3rem 0.6rem;
+  border-radius:5px;
+  font-weight:700;
+  text-decoration:none;
+  margin-left:0.6rem;
+}
+.lang-switch:hover{opacity:0.9}
 main{
   max-width:1000px;
   margin:1.5rem auto;
@@ -149,7 +159,7 @@ footer{
   </div>
   <p>Wetenschappelijk ondersteund • Natuurlijke Frisdrank in Maastricht</p>
   <nav>
-    <a href="index.html">Engels</a> | <a href="index-nl.html">Nederlands</a>
+    <a href="index.html" class="lang-switch">🇬🇧 English</a> | <a href="index-nl.html">Nederlands</a>
     <a href="#products">Producten</a>
     <a href="about-nl.html">Over Ons</a>
     <a href="/blog">Blog</a>
@@ -174,7 +184,7 @@ footer{
   <article class="card" aria-label="Classic Spark kombucha product">
     <img src="https://i.imgur.com/vNiByO1.jpg" alt="Classic Spark — sprankelende kombucha frisdrank" class="product-img" loading="lazy">
     <h2>Classic Spark</h2>
-    <p>Frisse, pittige kombucha — een gezonde frisdrank alternatief.</p>
+    <p>Frisse, pittige kombucha — een gezond frisdrankalternatief.</p>
     <a class="btn" href="checkout-nl.html?product=500ml-regular">Koop 500ml – €7</a>
     <a class="btn" href="checkout-nl.html?product=1l-regular">Koop 1L – €12</a>
   </article>
@@ -196,3 +206,4 @@ footer{
 </footer>
 </body>
 </html>
+
