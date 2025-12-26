@@ -12,65 +12,36 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-2RN71Q5DH6');
 
-// GA4 Custom Tracking for Buy Buttons and Newsletter
+// GA4 Custom Tracking for Buy Buttons
 document.addEventListener("DOMContentLoaded", function() {
-  // Track Buy button clicks
   document.querySelectorAll('.btn[href*="checkout.html"]').forEach(function(btn){
     btn.addEventListener('click', function() {
       let article = btn.closest('article');
-      if (!article) return; // safety check
+      if (!article) return;
       let h2 = article.querySelector('h2');
       let productName = h2 ? h2.innerText : 'Unknown Product';
       let priceMatch = btn.innerText.match(/€\d+/);
       let price = priceMatch ? priceMatch[0] : '';
-      console.log('Buy clicked:', productName, price); // debug log
+      console.log('Buy clicked:', productName, price);
       gtag('event', 'buy_click', {
         'product_name': productName,
         'price': price
       });
     });
   });
-
-  // Track Newsletter submissions
-  const newsletterForm = document.querySelector('#subscribe form');
-  if(newsletterForm){
-    newsletterForm.addEventListener('submit', function() {
-      console.log('Newsletter subscribed'); // debug log
-      gtag('event', 'newsletter_subscribe');
-    });
-  }
 });
 </script>
 
-<!-- Basic SEO -->
 <title>SOMA Kombucha — Natural Soda & Probiotic Drink in Maastricht</title>
 <meta name="description" content="SOMA Kombucha — Science-backed natural soda alternative brewed in Maastricht. Sparkling, probiotic, organic. Try Berry Fizz & Classic Spark." />
 <meta name="keywords" content="Kombucha in Maastricht, natural soda in Maastricht, natural probiotic drink in Maastricht, SOMA Kombucha, Berry Fizz, Classic Spark" />
 <meta name="author" content="SOMA Kombucha" />
 <link rel="canonical" href="https://yourdomain.com/" />
 
-<!-- Open Graph -->
-<meta property="og:locale" content="en_GB" />
-<meta property="og:site_name" content="SOMA Kombucha" />
-<meta property="og:title" content="SOMA Kombucha — Natural Soda & Probiotic Drink in Maastricht" />
-<meta property="og:description" content="Science-backed natural soda alternative brewed in Maastricht. Sparkling, probiotic, organic." />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://yourdomain.com/" />
-<meta property="og:image" content="https://i.imgur.com/jSSNozR.jpg" />
-<meta property="og:image:alt" content="Berry Fizz bottle — natural probiotic soda brewed in Maastricht" />
+<!-- Open Graph & Twitter meta tags omitted for brevity -->
 
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:site" content="@thereturntosource" />
-<meta name="twitter:title" content="SOMA Kombucha — Natural Soda in Maastricht" />
-<meta name="twitter:description" content="Sparkling, probiotic kombucha brewed locally in Maastricht. The healthy soda alternative." />
-<meta name="twitter:image" content="https://i.imgur.com/jSSNozR.jpg" />
-<meta name="twitter:image:alt" content="Berry Fizz bottle — natural probiotic soda brewed in Maastricht" />
-
-<!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Shrikhand&family=Canva+Sans&family=Hangyaboly&family=Handelson+Three&display=swap" rel="stylesheet" />
 
-<!-- Styles -->
 <style>
 :root{
   --primary-pink:#d2148e;
@@ -171,11 +142,6 @@ footer{
   text-align:center;
   margin-top:2rem;
 }
-footer nav a{
-  color:var(--muted);
-  margin:0 0.5rem;
-  text-decoration:none;
-}
 </style>
 </head>
 <body>
@@ -189,19 +155,16 @@ footer nav a{
     <a href="#products">Products</a>
     <a href="about.html">About Us</a>
     <a href="/blog">Blog</a>
-    <a href="#subscribe">Subscribe</a>
     <a href="#contact">Contact</a>
   </nav>
 </header>
 <main>
-<!-- Hero / Healthy Fizz -->
 <section class="card hero">
   <h2>The Healthy Fizz</h2>
   <p>SOMA Kombucha is a naturally sparkling probiotic drink — soda sensation, brewed with organic tea, live cultures, and juicy flavor.</p>
   <a class="btn" href="#products">Shop Drinks</a>
   <a class="btn secondary" href="about.html">Read the Science</a>
 </section>
-<!-- Products -->
 <section id="products" class="grid">
   <article class="card" aria-label="Berry Fizz kombucha product">
     <img src="https://i.imgur.com/jSSNozR.jpg" alt="Berry Fizz — natural probiotic soda in Maastricht" class="product-img" loading="lazy">
@@ -218,7 +181,6 @@ footer nav a{
     <a class="btn" href="checkout.html?product=1l-regular">Buy 1L – €12</a>
   </article>
 </section>
-<!-- About Us -->
 <section id="about" class="card">
   <h2>About SOMA Kombucha</h2>
   <p>
@@ -226,27 +188,13 @@ footer nav a{
   </p>
   <a href="about.html" class="btn">Learn More About the Science</a>
 </section>
-<!-- Newsletter -->
-<section id="subscribe" class="card">
-  <h2>Subscribe to Our Newsletter</h2>
-  <p>Get flavor drops, probiotic updates, and exclusive offers.</p>
-  <form action="https://your-mail-service.com/subscribe" method="POST">
-    <input type="email" name="email" placeholder="Enter your email" required>
-    <button type="submit" class="btn">Subscribe</button>
-  </form>
-</section>
-<!-- Contact -->
 <section id="contact" class="card">
   <h2>Contact</h2>
   <p>Email: <a href="mailto:somakombuchamaas@gmail.com">somakombuchamaas@gmail.com</a></p>
-  <p>Instagram: <a href="https://www.instagram.com/thereturntosource/" target="_blank">@thereturntosource</a></p>
 </section>
 </main>
 <footer>
-  <nav>
-    <a href="/privacy">Privacy Policy</a> | <a href="/terms">Terms of Service</a> | <a href="/returns">Returns & Refunds</a> | <a href="/shipping">Shipping Info</a>
-  </nav>
-  <p>&copy; 2025 SOMA Kombucha. All rights reserved.</p>
+  <p>SOMA Kombucha</p>
 </footer>
 </body>
 </html>
