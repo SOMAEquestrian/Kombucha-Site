@@ -80,16 +80,6 @@ nav a{
   font-weight:600;
 }
 nav a:hover{text-decoration:underline}
-.lang-switch{
-  background:#fff;
-  color:var(--primary-pink);
-  padding:0.3rem 0.6rem;
-  border-radius:5px;
-  font-weight:700;
-  text-decoration:none;
-  margin-left:0.6rem;
-}
-.lang-switch:hover{opacity:0.9}
 main{
   max-width:1000px;
   margin:1.5rem auto;
@@ -159,13 +149,18 @@ footer{
   </div>
   <p>Wetenschappelijk ondersteund • Natuurlijke Frisdrank in Maastricht</p>
   <nav>
-    <a href="index.html" class="lang-switch">🇬🇧 English</a> | <a href="index-nl.html">Nederlands</a>
+    <a href="index-nl.html">Home</a>
     <a href="#products">Producten</a>
     <a href="about-nl.html">Over Ons</a>
     <a href="/blog">Blog</a>
     <a href="#contact">Contact</a>
+    <!-- Language Switcher: only English -->
+    <span style="margin-left:1rem; font-weight:600;">
+      <a href="index.html" style="color:#fff; text-decoration:none;">🇬🇧 English</a>
+    </span>
   </nav>
 </header>
+
 <main>
 <section class="card hero">
   <h2>De Gezonde Fizz</h2>
@@ -173,6 +168,7 @@ footer{
   <a class="btn" href="#products">Bekijk Dranken</a>
   <a class="btn secondary" href="about-nl.html">Lees over de wetenschap</a>
 </section>
+
 <section id="products" class="grid">
   <article class="card" aria-label="Berry Fizz kombucha product">
     <img src="https://i.imgur.com/jSSNozR.jpg" alt="Berry Fizz — natuurlijke probiotische frisdrank in Maastricht" class="product-img" loading="lazy">
@@ -189,6 +185,7 @@ footer{
     <a class="btn" href="checkout-nl.html?product=1l-regular">Koop 1L – €12</a>
   </article>
 </section>
+
 <section id="about" class="card">
   <h2>Over SOMA Kombucha</h2>
   <p>
@@ -196,14 +193,17 @@ footer{
   </p>
   <a href="about-nl.html" class="btn">Lees meer over de wetenschap</a>
 </section>
+
 <section id="contact" class="card">
   <h2>Contact</h2>
   <p>Email: <a href="mailto:somakombuchamaas@gmail.com">somakombuchamaas@gmail.com</a></p>
 </section>
 </main>
+
 <footer>
   <p>&copy; 2025 SOMA Kombucha. Alle rechten voorbehouden.</p>
 </footer>
 </body>
 </html>
+
 
