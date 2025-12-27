@@ -4,3 +4,9 @@
 
 [functions]
   directory = "netlify/functions"
+
+[[redirects]]
+  from = "/index-nl.html"
+  to = "/index-nl"
+  status = 301
+
